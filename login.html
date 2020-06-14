@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with LinkedIN</title>
+    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+        api_key: {YOUR_API_KEY_GOES_HERE}
+        authorize: true
+    </script>
+     
+    <script type="text/javascript">
+    function onLinkedInAuth() {
+      IN.API.Profile("me")
+        .result( function(me) {
+          var id = me.values[0].id;
+          console.log(me.values[0])
+          // AJAX call to pass back id to your server
+        });
+    }
+    </script>
+</head>
+<body>
+    
+    <script type="IN/Login" data-onAuth="onLinkedInAuth"></script>
+
+</body>
+</html>
