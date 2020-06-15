@@ -271,25 +271,6 @@ header {
 }
 
 /* Input Fields */
-.input-field input[type=text]+label,
-.materialize-textarea:focus:not([readonly])+label {
-    color: #29292998 !important;
-    padding-left: 5px;
-    border-radius: 5px;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.input-field input[type=text],
-.materialize-textarea:focus:not([readonly]) {
-    border: 1px solid #29292998 !important;
-    padding-left: 5px;
-    border-radius: 5px;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
 .input-field input[type=text]:focus+label,
 .materialize-textarea:focus:not([readonly])+label {
     color: #0055FB !important;
@@ -302,6 +283,13 @@ header {
     border: 1px solid #0055FB !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+.input-field input[type=text],
+.materialize-textarea:focus:not([readonly]) {
+    border: 1px solid white !important;
+    border-radius: 7px;
+    padding-left: 10px;
 }
 
 /* Search in Nav */
@@ -337,8 +325,14 @@ header {
     color: #0055FB;
 }
 
-/* Best Blog Image */
-/* #bestBlogImg {
-    width: 240px;
-    max-width: 700px;
-} */
+/* Footer */
+/* Footer */
+.page-footer {
+    background: #292929;
+    color: white;
+}
+
+#page-footer {
+    background: #292929;
+    color: white;
+}
