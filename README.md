@@ -1,11 +1,11 @@
-# WhatAfterGrad Influencer
+# WhatAfterGrad Admin
 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/akshatvg/WhatAfterGrad?logo=github&style=social)](https://github.com/akshatvg/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/WhatAfterGrad?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/akshatvg/WhatAfterGrad?style=social)](https://github.com/akshatvg/WhatAfterGrad/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/WhatAfterGrad?style=social&logo=git)](https://github.com/akshatvg/WhatAfterGrad/network)
 
 Read inspiring stories from influencers who made mind-boggling decisions during tough times to help keep you going.
 
 <p align="center">
-<a href="https://www.whataftergrad.com">
+<a href="https://admin.whataftergrad.com">
 <img src="https://github.com/akshatvg/WhatAfterGrad/blob/master/assets/img/logo.svg" alt="WhatAfterGrad Logo"/>
 </a>
 </p>
@@ -14,9 +14,9 @@ Read inspiring stories from influencers who made mind-boggling decisions during 
 
  
 
-#### Link for [demo](https://www.whataftergrad.com) 
+#### Link for [demo](https://admin.whataftergrad.com) 
 
-[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://www.whataftergrad.com)
+[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://admin.whataftergrad.com)
 
 ## Useful Links
 
@@ -32,7 +32,7 @@ The source code of this project is written in **`HTML/CSS/JS`**. So, you do not 
 
 ## Instructions
 
-[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://www.whataftergrad.com)
+[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://admin.whataftergrad.com)
 
 Extract the folder and run `index.html` 
 
