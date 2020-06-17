@@ -178,26 +178,17 @@ button:focus {
 }
 
 /* Navbar */
+nav {
+    min-height: 95px;
+}
+
 .nav-wrapper {
-    background-color: white;
-    color: black;
+    background-color: #292929;
+    color: white;
 }
 
 .nav-wrapper a {
     color: black;
-}
-
-nav.nav-center ul {
-    text-align: center;
-}
-
-nav.nav-center ul li {
-    display: inline;
-    float: none;
-}
-
-nav.nav-center ul li a {
-    display: inline-block;
 }
 
 /* Active Sidebar */
@@ -328,7 +319,7 @@ header {
     background-color: #0055FB;
     color: white;
     border-radius: 5px;
-    height: 40px;
+    height: 35px;
 }
 
 .btn-wag-black,
@@ -362,7 +353,6 @@ header {
     color: #0055FB;
 }
 
-/* Footer */
 /* Footer */
 .page-footer {
     background: #292929;
