@@ -329,7 +329,7 @@ header {
     color: white;
     border-radius: 5px;
     height: 40px;
-    width: 220px;
+    width: 120px;
 }
 
 .btn-wag-black-inverse,
@@ -386,6 +386,7 @@ header {
 .input-field input[type=password]:focus,
 .input-field input[type=text]:focus,
 .input-field input[type=tel]:focus,
+.input-field input[type=url]:focus,
 .input-field input[type=number]:focus {
     border-bottom: 1px solid #0055FB !important;
     outline: none !important;
@@ -408,4 +409,26 @@ header {
     .w-md-30 {
         width: 30% !important;
     }
+}
+
+/* Question Box */
+.bordered {
+    border: 1px solid rgba(41, 41, 41, 0.28);
+    border-radius: 8px;
+}
+
+textarea {
+    height: 10rem;
+    resize: vertical;
+}
+
+/* Sticky Footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
