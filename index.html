@@ -65,38 +65,34 @@
 <body>
 
     <!-- Navbar -->
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <ul class="left hide-on-med-and-down">
-                    <li class="mx-xl-4"><a href="/">Home</a></li>
-                    <li class="mx-xl-4"><a href="/about">About Us</a></li>
-                    <li class="mx-xl-4"><a href="/whyUs">Why Us</a></li>
-                    <li class="mx-xl-4"><a href="/signin">Sign In</a></li>
-                </ul>
-                <a href="/" class="brand-logo pl-md-5 center"><img src="assets/img/logo.svg" alt="WAG"
-                        class="responsive-img mt-1 mt-md-2" width="125px"></a>
-                <a href="#" data-target="mobile" class="sidenav-trigger left"><i
-                        class="material-icons black-text">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li class="mr-xl-2"><a onclick="searchFocus();"><i class="material-icons">search</i></a></li>
-                    <li class="mr-xl-4">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s7">
-                                    <input id="search" type="searchTxt" placeholder="Type Something">
-                                </div>
-                                <div class="input-field col s5">
-                                    <button class="waves-effect btn btn-wag-search z-depth-0 mt-n1 ml-n4" type="button"
-                                        id="searchBtn">Search</button>
-                                </div>
+    <nav class="nav-center z-depth-0">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo pl-md-5 left"><img src="assets/img/logo.svg" alt="WAG"
+                    class="responsive-img mt-3" width="90px"></a>
+            <ul class="center hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/whyUs">Why Us</a></li>
+                <li><a href="/signin">Sign In</a></li>
+                <div class="right row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s9 black-text d-inline">
+                                <i class="material-icons prefix mt-n2">search</i>
+                                <input id="search" type="searchTxt" placeholder="Type Something">
                             </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+                            <div class="input-field col s3 black-text d-inline">
+                                <button class="waves-effect btn btn-wag-search z-depth-0 d-inline ml-n5 mt-n1"
+                                    type="button" id="searchBtn">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+            <a href="#" data-target="mobile" class="sidenav-trigger right"><i
+                    class="material-icons black-text">menu</i></a>
+        </div>
+    </nav>
 
     <!-- Sidebar (Mobile Nav) -->
     <ul class="sidenav" id="mobile">
@@ -121,7 +117,7 @@
     </ul>
 
     <!-- Home Section -->
-    <div class="px-5 pt-3 mb-5">
+    <div class="px-5 pt-0 mb-5">
         <!-- Best Blog -->
         <div class="row mt-5 px-md-5">
             <div class="col s12 xl8">
@@ -280,15 +276,15 @@
                                     class="white-text mt-3">
                             </div>
                         </div>
-                        <div class="row mt-n3 px-4">
+                        <div class="row mt-n1 px-4">
                             <button class="waves-effect btn btn-wag z-depth-0" type="button"
                                 id="newsletterRegBtn">Submit</button>
                         </div>
                     </form>
                 </div>
-                <div class="col l4 offset-l2 s12 my-3">
+                <div class="col l4 offset-l2 s12 my-3 mt-md-5 pt-md-5">
                     <a href="/"><img src="assets/img/logo-white.svg" alt="WhatAFterGrad Logo"
-                            class="responsive-img mt-md-5" width="300px"></a>
+                            class="responsive-img mt-md-5" width="250px"></a>
                 </div>
             </div>
         </div>
