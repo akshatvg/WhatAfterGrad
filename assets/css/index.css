@@ -271,22 +271,19 @@ header {
 }
 
 /* Input Fields */
-.input-field input[type=text]:focus+label,
-.materialize-textarea:focus:not([readonly])+label {
+.input-field input[type=searchTxt]:focus+label {
     color: #0055FB !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-.input-field input[type=text]:focus,
-.materialize-textarea:focus:not([readonly]) {
+.input-field input[type=searchTxt]:focus {
     border: 1px solid #0055FB !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-.input-field input[type=text],
-.materialize-textarea:focus:not([readonly]) {
+.input-field input[type=searchTxt] {
     border: 1px solid white !important;
     border-radius: 7px;
     padding-left: 10px;
@@ -320,8 +317,34 @@ header {
     height: 40px;
 }
 
+.btn-wag-black,
+.btn-wag-black:hover,
+.btn-wag-black:focus {
+    background-color: #292929;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 220px;
+}
+
+.btn-wag-black-inverse,
+.btn-wag-black-inverse:hover,
+.btn-wag-black-inverse:focus {
+    background-color: white;
+    color: #292929;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    height: 40px;
+    width: 220px;
+}
+
 /* Text Colored */
 .text-colored {
+    color: #0055FB;
+}
+
+.focus-colored:focus,
+.prefix:focus {
     color: #0055FB;
 }
 
@@ -335,4 +358,50 @@ header {
 #page-footer {
     background: #292929;
     color: white;
+}
+
+/* Some Sizing */
+.w-100 {
+    width: 100% !important;
+}
+
+.w-70 {
+    width: 70% !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.w-30 {
+    width: 30% !important;
+}
+
+/* Input Fields */
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=tel]:focus,
+.input-field input[type=number]:focus {
+    border-bottom: 2px solid #0055FB !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@media only screen and (min-width:780px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+
+    .w-md-70 {
+        width: 70% !important;
+    }
+
+    .w-md-50 {
+        width: 50% !important;
+    }
+
+    .w-md-30 {
+        width: 30% !important;
+    }
 }
