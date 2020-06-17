@@ -19,8 +19,4 @@
 
 })(jQuery);
 
-function searchFocus() {
-    $("#search").focus();
-}
-
 console.clear();

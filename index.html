@@ -66,34 +66,32 @@
 
     <!-- Navbar -->
     <div class="navbar-fixed">
-        <nav>
+        <nav class="nav-center">
             <div class="nav-wrapper">
-                <ul class="left hide-on-med-and-down">
-                    <li class="mx-xl-4"><a href="/">Home</a></li>
-                    <li class="mx-xl-4"><a href="/about">About Us</a></li>
-                    <li class="mx-xl-4"><a href="/whyUs">Why Us</a></li>
-                    <li class="mx-xl-4"><a href="/signin">Sign In</a></li>
-                </ul>
-                <a href="/" class="brand-logo pl-md-5 center"><img src="assets/img/logo.svg" alt="WAG"
-                        class="responsive-img mt-1 mt-md-2" width="125px"></a>
-                <a href="#" data-target="mobile" class="sidenav-trigger left"><i
-                        class="material-icons black-text">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li class="mr-xl-2"><a onclick="searchFocus();"><i class="material-icons">search</i></a></li>
-                    <li class="mr-xl-4">
-                        <form class="col s12">
+                <a href="/" class="brand-logo pl-md-5 left"><img src="assets/img/logo.svg" alt="WAG"
+                        class="responsive-img mt-3" width="90px"></a>
+                <ul class="center hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/whyUs">Why Us</a></li>
+                    <li><a href="/signin">Sign In</a></li>
+                    <div class="right row">
+                        <div class="col s12">
                             <div class="row">
-                                <div class="input-field col s7">
+                                <div class="input-field col s9 black-text d-inline">
+                                    <i class="material-icons prefix mt-n2">search</i>
                                     <input id="search" type="searchTxt" placeholder="Type Something">
                                 </div>
-                                <div class="input-field col s5">
-                                    <button class="waves-effect btn btn-wag-search z-depth-0 mt-n1 ml-n4" type="button"
-                                        id="searchBtn">Search</button>
+                                <div class="input-field col s3 black-text d-inline">
+                                    <button class="waves-effect btn btn-wag-search z-depth-0 d-inline ml-n5 mt-n1"
+                                        type="button" id="searchBtn">Search</button>
                                 </div>
                             </div>
-                        </form>
-                    </li>
+                        </div>
+                    </div>
                 </ul>
+                <a href="#" data-target="mobile" class="sidenav-trigger right"><i
+                        class="material-icons black-text">menu</i></a>
             </div>
         </nav>
     </div>
