@@ -6,7 +6,7 @@ Write inspiring stories as an influencer who made mind-boggling decisions during
 
 <p align="center">
 <a href="https://influencer.whataftergrad.com">
-<img src="https://github.com/akshatvg/WhatAfterGrad/blob/master/assets/img/logo.svg" width="120px" alt="WhatAfterGrad Logo"/>
+<img src="https://github.com/akshatvg/WhatAfterGrad/blob/master/assets/img/logo.svg" alt="WhatAfterGrad Logo"/>
 </a>
 </p>
 
@@ -20,7 +20,9 @@ Write inspiring stories as an influencer who made mind-boggling decisions during
 
 ## Useful Links
 
-* [Actual Website](https://influencer.whataftergrad.com)
+* [User Website](https://www.whataftergrad.com)
+* [Influencer Website](https://influencer.whataftergrad.com)
+* [Admin Website](https://admin.whataftergrad.com)
 
 ## Requirements
 
