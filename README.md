@@ -2,7 +2,7 @@
 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/akshatvg/WhatAfterGrad?logo=github&style=social)](https://github.com/akshatvg/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/WhatAfterGrad?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/akshatvg/WhatAfterGrad?style=social)](https://github.com/akshatvg/WhatAfterGrad/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/WhatAfterGrad?style=social&logo=git)](https://github.com/akshatvg/WhatAfterGrad/network)
 
-Read inspiring stories from influencers who made mind-boggling decisions during tough times to help keep you going.
+Monitor inspiring stories from influencers who made mind-boggling decisions during tough times to help keep the readers going.
 
 <p align="center">
 <a href="https://admin.whataftergrad.com">
