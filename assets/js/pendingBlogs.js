@@ -202,7 +202,14 @@ $(document).ready(function () {
             "data": "phone"
         },{
             "data": "description"
-        },
+        },{
+            "mData": null,
+            "bSortable": false,
+            "mRender": function (data, type, full) {
+                return `<button type="button" id="viewAnswers" onclick="Alert("Questiions approve not completed yet. ID : "${full['id']})"
+                            class="waves-effect btn btn-wag z-depth-0 center">Approve Questions</button>`
+            },
+        }
         ],
     });
 });
