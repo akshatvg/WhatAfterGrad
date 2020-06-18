@@ -127,8 +127,7 @@ function addQuestions(){
                     }
                 })
             } else {
-                ShowToast("Server error. Our team has been informed. Working on it.");
-                
+                ShowToast("Server error. Our team has been informed. Working on it.");   
             }
             return;
         })
