@@ -14,7 +14,7 @@
     <meta name="author" content="Akshat Gupta & Sai Sandeep">
     <meta name="copyright" content="WhatAfterGrad">
     <meta name="language" content="en">
-    <meta name="url" content="https://admin.whataftergrad.com/submissions">
+    <meta name="url" content="https://admin.whataftergrad.com/viewAnswers">
     <meta name="category" content="General">
     <meta name="coverage" content="Worldwide">
     <meta name="rating" content="General">
@@ -27,7 +27,7 @@
     <meta property="og:title" content="WhatAfterGrad">
     <meta property="og:description"
         content="Monitor inspiring stories from influencers who made mind-boggling decisions during tough times to help keep the readers going.">
-    <meta property="og:url" content="https://admin.whataftergrad.com/submissions">
+    <meta property="og:url" content="https://admin.whataftergrad.com/viewAnswers">
     <meta property="og:site_name" content="WhatAfterGrad">
     <meta name="twitter:card" content="website">
     <meta name="twitter:site" content="WhatAfterGrad">
@@ -38,7 +38,7 @@
     <meta itemprop="name" content="WhatAfterGrad">
     <meta itemprop="description"
         content="Monitor inspiring stories from influencers who made mind-boggling decisions during tough times to help keep the readers going.">
-    <link rel="canonical" href="https://admin.whataftergrad.com/submissions">
+    <link rel="canonical" href="https://admin.whataftergrad.com/viewAnswers">
 
     <!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Materialize & CSS -->
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- Title -->
-    <title>WhatAfterGrad || Submissions</title>
+    <title>WhatAfterGrad || View Answers</title>
 
     <!-- No Script -->
     <noscript>Please enable Why Us to open this page.</noscript>
@@ -83,11 +83,10 @@
                 <img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img">
             </li>
         </a>
-        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align">Create New
+        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New
                 Influencer</a>
         </li>
-        <li class="mt-1"><a href="/submissions" class="waves-effect grey lighten-4 center-align" id="active">View
-                Submissions</a>
+        <li class="mt-1"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a>
         </li>
         <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i
                     class="material-icons">exit_to_app</i>Logout</a></li>
@@ -102,45 +101,53 @@
                 <h4 class="heading">Hello Admin !</h4>
             </div>
             <div class="row mt-n4">
-                <p class="heading">Would you like to read the answers submitted by our influencers?</p>
+                <p class="heading">Read these answers carefully before publishing it into a blog.</p>
             </div>
-            <div class="row">
-                <div id="man" class="col s12">
-                    <div class="card material-table">
-                        <div class="table-header">
-                            <span class="table-title">View Submissions</span>
-                            <div class="actions">
-                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i
-                                        class="material-icons">search</i></a>
-                            </div>
-                        </div>
-                        <table id="viewSubmissions">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Answers</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Akshat Gupta</td>
-                                    <td>Software Developer at Josh Talks</td>
-                                    <td><a href="/viewAnswers"><button type="button" id="viewAnswers"
-                                                class="waves-effect btn btn-wag z-depth-0 center">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sai Sandeep</td>
-                                    <td>Backend Developer at Onlala</td>
-                                    <td><a href="/viewAnswers"><button type="button" id="viewAnswers"
-                                                class="waves-effect btn btn-wag z-depth-0 center">View</button></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <!-- Questions -->
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">1</span> :</p>
                 </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="answerId" class="browser-default bordered p-2"
+                            placeholder="Type something here......">This is an Answer.</textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">2</span> :</p>
+                </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="answerId" class="browser-default bordered p-2"
+                            placeholder="Type something here......">This is an Answer.</textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">3</span> :</p>
+                </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="answerId" class="browser-default bordered p-2"
+                            placeholder="Type something here......">This is an Answer.</textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- Btns -->
+            <div class="row center">
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
+                    id="submitBtn">Publish Blog</button>
+            </div>
+            <div class="row center">
+                <a href="/submissions"><button class="waves-effect waves-light btn btn-wag-black-inverse z-depth-0 center mt-2"
+                        type="button">Go Back</button></a>
             </div>
         </div>
     </main>
@@ -177,9 +184,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/index.js"></script>
-    <script src="assets/js/submissionsTable.js"></script>
 
 </body>
 
