@@ -116,7 +116,7 @@ function SignUp() {
                         ShowToast("User Already exists!")
                         document.getElementById("password").value = ''
                         document.getElementById("signup").disabled = false
-                    } else if (res.status == 200) {
+                    } else if (res.status == 201) {
                         res.json().then(function (data) {
                             if (data == null) { } else {
                                 ShowToast("Login Success")
@@ -188,7 +188,6 @@ function Linkedin() {
                         ShowToast("Login Success")
                         localStorage.setItem("TOKEN", "Token " + data.user.token)
                         localStorage.setItem("FULL_NAME", data.user.full_name)
-                        document.getElementById("signin").disabled = false
                         return window.location.replace("/");
                     }
                 })
@@ -196,7 +195,6 @@ function Linkedin() {
                 ShowToast("Server error. Our team has been informed. Working on it.");
                 document.getElementById("email").value = '';
                 document.getElementById("password").value = '';
-                document.getElementById("signin").disabled = false
             }
             return;
         })
