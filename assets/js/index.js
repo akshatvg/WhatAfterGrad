@@ -80,6 +80,60 @@ function Login() {
     }
 }
 
+function gup(name) {
+    url = location.href;
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(url);
+    return results == null ? null : results[1];
+}
+
+
+function addQuestions(){
+    textfields = document.getElementsByClassName("questionstext")
+    var questions = []
+    for(var i=0;i<textfields.length;i++){
+        questions.push(textfields[i].value)
+    }
+    data = {
+        "id":gup("id"),
+        "questions":questions
+    }
+    console.log(data)
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('TOKEN')
+        },
+    }
+    fetch(QUESTION_ADD, fetchData)
+        .then(function (res) {
+            if (res.status == 400) {
+                ShowToast("Looks like you messed up something with url!")
+            }else if (res.status == 404) {
+                ShowToast("Looks like you messed up something with url!")
+            }else if (res.status == 401) {
+                ShowToast("Not Authorised")
+                window.location.replace("signin/")
+            } else if (res.status == 201) {
+                res.json().then(function (data) {
+                    if (data == null) { } else {
+                        ShowToast("Add Success!")
+                        window.location.replace("/approvedRequests")
+                    }
+                })
+            } else {
+                ShowToast("Server error. Our team has been informed. Working on it.");
+                
+            }
+            return;
+        })
+        .catch((error) => { })
+}
 
 
 
