@@ -4,7 +4,14 @@
 <head>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169908904-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'UA-169908904-3');
+    </script>
 
     <!-- Meta Tags for SEO -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -86,9 +93,11 @@
                 <img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img">
             </li>
         </a>
-        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New Influencer</a>
+        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New
+                Influencer</a>
         </li>
-        <li class="mt-1"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a></li>
+        <li class="mt-1"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a>
+        </li>
         <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i
                     class="material-icons">exit_to_app</i>Logout</a></li>
     </ul>
