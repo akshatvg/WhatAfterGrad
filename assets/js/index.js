@@ -19,6 +19,23 @@
 
 })(jQuery);
 
+function Validateemail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value)) {
+        return true;
+    }
+    ShowToast("Please enter a valid email address.");
+    return false;
+}
+
+function ValidatePass() {
+    if (document.getElementById("password").value.length > 5)
+        return true;
+    else
+        ShowToast("Wrong password");
+    return false;
+
+}
+
 function Login() {
     if (!Validateemail()) { } else {
         if (!ValidatePass()) { } else {
@@ -36,7 +53,7 @@ function Login() {
             }
             fetch(LOGIN_URL, fetchData)
                 .then(function (res) {
-                    if (res.status == 401) {
+                    if (res.status == 400) {
                         ShowToast("Wrong credentials!")
                         document.getElementById("password").value = ''
                         document.getElementById("signin").disabled = false
