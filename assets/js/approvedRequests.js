@@ -186,7 +186,7 @@ $(document).ready(function () {
         },
         bAutoWidth: false,
         "ajax": {
-            "url": BASE_URL+"api/admin/blogs/pending",
+            "url": BASE_URL+"api/admin/blogs/approved",
             "type": "GET",
             "headers": {
                 'Authorization': localStorage.getItem('TOKEN')
@@ -202,6 +202,13 @@ $(document).ready(function () {
             "data": "phone"
         },{
             "data": "description"
+        },{
+            "mData": null,
+            "bSortable": false,
+            "mRender": function (data, type, full) {
+                return `<a href="/viewAnswers?id=${full['id']}"+><button type="button" id="viewAnswers"
+                            class="waves-effect btn btn-wag z-depth-0 center">View</button></a>`
+            },
         },
         ],
     });
