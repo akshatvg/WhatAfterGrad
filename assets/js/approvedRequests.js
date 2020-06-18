@@ -169,7 +169,7 @@
 
 // DataTable Function
 $(document).ready(function () {
-    $('#viewPendingRequests').dataTable({
+    $('#viewAppRequests').dataTable({
         "oLanguage": {
             "sStripClasses": "",
             "sSearch": "",
@@ -186,7 +186,7 @@ $(document).ready(function () {
         },
         bAutoWidth: false,
         "ajax": {
-            "url": BASE_URL+"api/admin/blogs/approved",
+            "url": BASE_URL+"api/admin/blog/approved",
             "type": "GET",
             "headers": {
                 'Authorization': localStorage.getItem('TOKEN')
@@ -207,7 +207,7 @@ $(document).ready(function () {
             "bSortable": false,
             "mRender": function (data, type, full) {
                 return `<a href="/viewAnswers?id=${full['id']}"+><button type="button" id="viewAnswers"
-                            class="waves-effect btn btn-wag z-depth-0 center">View</button></a>`
+                            class="waves-effect btn btn-wag z-depth-0 center">Allot Questions</button></a>`
             },
         },
         ],
