@@ -114,101 +114,79 @@
     </ul>
 
     <!-- Content -->
-    <div class="container px-5 pt-0 mb-5">
-        <div class="row center mt-5">
-            <p class="heading">Signup with</p>
+    <main>
+        <div class="container px-5 pt-0 mb-5">
+            <div class="row center mt-5">
+                <p class="heading">Signup with</p>
+            </div>
+            <form class="col s12">
+                <div class="row center mt-n3">
+                    <div class="input-field center w-md-30 mx-auto">
+                        <i class="material-icons prefix black-text">person</i>
+                        <input id="name" type="text" class="validate" class="black-text">
+                        <label for="name" class="black-text">Full Name</label>
+                    </div>
+                </div>
+                <div class="row center mt-n3">
+                    <div class="input-field center w-md-30 mx-auto">
+                        <i class="material-icons prefix black-text">email</i>
+                        <input id="email" type="email" class="validate" class="black-text">
+                        <label for="email" class="black-text">Email</label>
+                    </div>
+                </div>
+                <div class="row center mt-n3">
+                    <div class="input-field center w-md-30 mx-auto">
+                        <i class="material-icons prefix black-text">phone</i>
+                        <input id="phone" type="tel" class="validate" class="black-text">
+                        <label for="phone" class="black-text">Phone</label>
+                    </div>
+                </div>
+                <div class="row center mt-n3">
+                    <div class="input-field center w-md-30 mx-auto">
+                        <i class="material-icons prefix black-text">lock</i>
+                        <input id="password" type="password" class="validate" class="black-text">
+                        <label for="password" class="black-text">Password</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <button class="btn waves-effect waves-light btn-wag-black z-depth-0" type="button" id="signup"
+                        onclick="SignUp()">Sign Up</button>
+                </div>
+                <div class="row center">
+                    <p class="heading"> - or - </p>
+                </div>
+                <div class="row center mt-n3">
+                    <a href="/signin"><button class="btn waves-effect btn-wag-black-inverse z-depth-0"
+                            type="button">Login</button></a>
+                </div>
+            </form>
         </div>
-        <form class="col s12">
-            <div class="row center mt-n3">
-                <div class="input-field center w-md-30 mx-auto">
-                    <i class="material-icons prefix black-text">person</i>
-                    <input id="name" type="text" class="validate" class="black-text">
-                    <label for="name" class="black-text">Full Name</label>
-                </div>
-            </div>
-            <div class="row center mt-n3">
-                <div class="input-field center w-md-30 mx-auto">
-                    <i class="material-icons prefix black-text">email</i>
-                    <input id="email" type="email" class="validate" class="black-text">
-                    <label for="email" class="black-text">Email</label>
-                </div>
-            </div>
-            <div class="row center mt-n3">
-                <div class="input-field center w-md-30 mx-auto">
-                    <i class="material-icons prefix black-text">phone</i>
-                    <input id="phone" type="tel" class="validate" class="black-text">
-                    <label for="phone" class="black-text">Phone</label>
-                </div>
-            </div>
-            <div class="row center mt-n3">
-                <div class="input-field center w-md-30 mx-auto">
-                    <i class="material-icons prefix black-text">lock</i>
-                    <input id="password" type="password" class="validate" class="black-text">
-                    <label for="password" class="black-text">Password</label>
-                </div>
-            </div>
-            <div class="row center">
-                <button class="btn waves-effect waves-light btn-wag-black z-depth-0" type="button" id="signup" onclick="SignUp()"
-                >Sign Up</button>
-            </div>
-            <div class="row center">
-                <p class="heading"> - or - </p>
-            </div>
-            <div class="row center mt-n3">
-                <a href="/signin"><button class="btn waves-effect btn-wag-black-inverse z-depth-0"
-                        type="button">Login</button></a>
-            </div>
-        </form>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="page-footer mt-5" id="page-footer">
+    <footer class="page-footer" id="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <div class="mt-3">
-                        <img src="assets/img/newsletter.svg" alt="" class="responsive-img d-inline"
-                            width="30px">&nbsp;&nbsp;
-                        <h4 class="white-text d-inline heading">Subscribe to our newsletter</h4>
-                    </div>
-                    <form class="mt-4">
-                        <div class="row mt-3">
-                            <div class="input-field col s5 mx-md-3">
-                                <label for="fnameNewsletter" class="white-text">First Name</label>
-                                <input id="fnameNewsletter" type="text" placeholder="John" class="white-text mt-3">
-                            </div>
-                            <div class="input-field col s5 mx-md-3">
-                                <label for="lnameNewsletter" class="white-text">Last Name</label>
-                                <input id="lnameNewsletter" type="text" placeholder="Doe" class="white-text mt-3">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s5 mx-md-3">
-                                <label for="phoneNewsletter" class="white-text">Phone</label>
-                                <input id="phoneNewsletter" type="tel" placeholder="+91 9876543210"
-                                    class="white-text mt-3">
-                            </div>
-                            <div class="input-field col s5 mx-md-3">
-                                <label for="emailNewsletter" class="white-text">Email</label>
-                                <input id="emailNewsletter" type="email" placeholder="john.doe@whataftergrad.com"
-                                    class="white-text mt-3">
-                            </div>
-                        </div>
-                        <div class="row mt-n1 px-4">
-                            <button class="waves-effect btn btn-wag z-depth-0" type="button"
-                                id="newsletterRegBtn">Submit</button>
-                        </div>
-                    </form>
+                    <img src="assets/img/logo-white.svg" alt="WAG" width="140px" class="mt-3 responsive-img">
+                    <p class="grey-text text-lighten-4">Read inspiring stories from influencers who made mind-boggling
+                        decisions during tough times to help keep you going.</p>
                 </div>
-                <div class="col l4 offset-l2 s12 my-3 mt-md-5 pt-md-5">
-                    <a href="/"><img src="assets/img/logo-white.svg" alt="WhatAFterGrad Logo"
-                            class="responsive-img mt-md-5" width="250px"></a>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Popular Blogs</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 4</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2020 Copyright WhatAfterGrad
+                © 2020 Copyright <a href="https://www.whataftergrad.com"
+                    class="white-text text-lighten-4">WhatAfterGrad</a>
                 <a class="grey-text text-lighten-4 right" href="#!" target="_blank"><i
                         class="fa fa-facebook social-icons mx-3"></i></a>
                 <a class="grey-text text-lighten-4 right" href="#!" target="_blank"><i
