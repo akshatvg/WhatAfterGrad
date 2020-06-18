@@ -62,83 +62,96 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="nav-center z-depth-0 mb-5">
+    <nav class="nav-center z-depth-0">
         <div class="nav-wrapper">
-            <a href="/" class="pl-3 pl-md-5 left"><img src="assets/img/logo-white.svg" alt="WAG"
-                    class="responsive-img mt-4" width="130px"></a>
-            <ul class="brand-logo center hide-on-med-and-down heading mt-1">
-                <li>
-                    <h4 class="center heading">Influencer Portal</h4>
-                </li>
+            <a href="/" class="brand-logo pl-md-5 left"><img src="assets/img/logo.svg" alt="WAG"
+                    class="responsive-img mt-3" width="90px"></a>
+            <ul class="center hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/whyUs">Why Us</a></li>
+                <li><a href="/signin">Sign In</a></li>
+                <div class="right row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s9 black-text d-inline">
+                                <i class="material-icons prefix mt-n2">search</i>
+                                <input id="search" type="searchTxt" placeholder="Type Something">
+                            </div>
+                            <div class="input-field col s3 black-text d-inline">
+                                <button class="waves-effect btn btn-wag-search z-depth-0 d-inline ml-n5 mt-n1"
+                                    type="button" id="searchBtn">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </ul>
-            <ul class="right pr-xl-5 pr-3 mt-3">
-                <button class="waves-effect btn btn-wag z-depth-0 center mt-md-n2" type="button"
-                    id="logoutBtn">Logout</button>
-            </ul>
+            <a href="#" data-target="mobile" class="sidenav-trigger right"><i
+                    class="material-icons black-text">menu</i></a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Hello Text -->
-        <div class="row">
-            <h4 class="heading">Hello <span id="influencerName">Hardik</span> !</h4>
-        </div>
-        <div class="row mt-n4">
-            <p class="heading">We would love to learn more about you..</p>
-        </div>
-        <!-- Questions -->
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
+    <!-- Sidebar (Mobile Nav) -->
+    <ul class="sidenav" id="mobile">
+        <a href="/" class="center-align">
+            <li class="mt-5">
+                <img alt="WAG" src="assets/img/logo.svg" class="responsive-img">
+            </li>
+        </a>
+        <li class="mt-0"><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/whyUs">Why Us</a></li>
+        <li><a href="/signin">Sign In</a></li>
+        <li class="mx-auto">
+            <form class="center">
+                <div class="input-field">
+                    <input id="searchMobile" type="text" placeholder="Type Something">
                 </div>
+                <button class="waves-effect btn btn-wag-search z-depth-0 mt-n5" type="button"
+                    id="searchBtnMobile">Search</button>
             </form>
-        </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </li>
+    </ul>
+
+    <!-- Content -->
+    <main>
+        <div class="container px-5 pt-md-5 pb-md-5 mb-5">
+            <div class="row center pt-md-5">
+                <h3 class="heading pt-md-5 mt-md-5">Looks like you really love exploring our website.</h3>
+                <p>This page doesn't exist though. We strongly recommend you click the button below ↓</p>
             </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
-        </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <div class="row center">
+                <a href="/"><button class="btn waves-effect waves-light btn-wag z-depth-0" type="button">Go
+                        Home</button></a>
             </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
         </div>
-        <!-- Submit Btn -->
-        <div class="row center">
-            <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
-                id="submitBtn">Submit</button>
-        </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="p-3 mt-5 page-footer" id="page-footer">
+    <footer class="page-footer" id="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <img src="assets/img/logo-white.svg" alt="WAG" width="140px" class="mt-3 responsive-img">
+                    <p class="grey-text text-lighten-4">Read inspiring stories from influencers who made
+                        mind-boggling
+                        decisions during tough times to help keep you going.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Popular Blogs</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2020 Copyright WhatAfterGrad.com
+                © 2020 Copyright <a href="https://www.whataftergrad.com"
+                    class="white-text text-lighten-4">WhatAfterGrad</a>
                 <a class="grey-text text-lighten-4 right" href="#!" target="_blank"><i
                         class="fa fa-facebook social-icons mx-3"></i></a>
                 <a class="grey-text text-lighten-4 right" href="#!" target="_blank"><i
