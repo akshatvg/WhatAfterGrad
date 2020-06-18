@@ -171,17 +171,17 @@ function Linkedin() {
                 ShowToast("Authentication Failed! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 2000);
+                  }, 5000);
             } else if (res.status == 403) {
                 ShowToast("Authentication code missing! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 2000);
+                  }, 5000);
             } else if (res.status == 206) {
                 ShowToast("Account not authorised. You can authroise account in settings after logging in! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 2000);
+                  }, 5000);
             } else if (res.status == 200) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
