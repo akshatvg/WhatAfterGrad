@@ -206,7 +206,7 @@ $(document).ready(function () {
             "mData": null,
             "bSortable": false,
             "mRender": function (data, type, full) {
-                return `<a href="/viewAnswers?id=${full['id']}"+><button type="button" id="viewAnswers"
+                return `<a href="/allotQuestions?id=${full['id']}"+><button type="button" id="viewAnswers"
                             class="waves-effect btn btn-wag z-depth-0 center">Allot Questions</button></a>`
             },
         },

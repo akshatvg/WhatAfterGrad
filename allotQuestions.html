@@ -99,14 +99,55 @@
 
     <!-- Main Content -->
     <main>
-        <div class="container px-5 pt-md-5 pb-md-5 mb-5">
-            <div class="row center pt-md-5">
-                <h3 class="heading pt-md-5 mt-md-5">Hey Admin.</h3>
-                <p>This page is not completed yet. Stay Tuned! Meanwhile explore rest ↓</p>
+        <div class="container">
+            <!-- Hello Text -->
+            <div class="row">
+                <h4 class="heading">Hello Admin !</h4>
             </div>
+            <div class="row mt-n4">
+                <p class="heading">What would you like to ask our influencers?</p>
+            </div>
+            <!-- Questions -->
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">1</span> :</p>
+                </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="question" class="browser-default bordered p-2"
+                            placeholder="Type something here......"></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">2</span> :</p>
+                </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="question" class="browser-default bordered p-2"
+                            placeholder="Type something here......"></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- 1 Question -->
+            <div class="bordered p-3 my-3">
+                <div class="row p-3">
+                    <p class="heading d-inline">Question <span id="questionId">3</span> :</p>
+                </div>
+                <form class="col s12 mt-n1">
+                    <div class="input-field col s12">
+                        <textarea id="question" class="browser-default bordered p-2"
+                            placeholder="Type something here......"></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- Submit Btn -->
             <div class="row center">
-                <a href="/blogRequests"><button class="btn waves-effect waves-light btn-wag-black z-depth-0" type="button">Go
-                        Home</button></a>
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
+                    id="submitBtn">Generate Link For Influencer</button>
             </div>
         </div>
     </main>
