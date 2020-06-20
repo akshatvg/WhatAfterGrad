@@ -432,3 +432,15 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+/* Dashboard Cards */
+.bg-card {
+    background-color: #292929;
+    color: white;
+}
+
+@media only screen and (max-width: 780px) {
+    .bg-card {
+        min-width: 210px;
+    }
+}
