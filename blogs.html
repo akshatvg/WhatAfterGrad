@@ -14,7 +14,7 @@
     <meta name="author" content="Akshat Gupta & Sai Sandeep">
     <meta name="copyright" content="WhatAfterGrad">
     <meta name="language" content="en">
-    <meta name="url" content="https://influencer.whataftergrad.com/questions">
+    <meta name="url" content="https://influencer.whataftergrad.com/blogs">
     <meta name="category" content="General">
     <meta name="coverage" content="Worldwide">
     <meta name="rating" content="General">
@@ -27,7 +27,7 @@
     <meta property="og:title" content="WhatAfterGrad">
     <meta property="og:description"
         content="Write inspiring stories as an influencer who made mind-boggling decisions during tough times to help keep others going.">
-    <meta property="og:url" content="https://influencer.whataftergrad.com/questions">
+    <meta property="og:url" content="https://influencer.whataftergrad.com/blogs">
     <meta property="og:site_name" content="WhatAfterGrad">
     <meta name="twitter:card" content="website">
     <meta name="twitter:site" content="WhatAfterGrad">
@@ -38,7 +38,7 @@
     <meta itemprop="name" content="WhatAfterGrad">
     <meta itemprop="description"
         content="Write inspiring stories as an influencer who made mind-boggling decisions during tough times to help keep others going.">
-    <link rel="canonical" href="https://influencer.whataftergrad.com/questions">
+    <link rel="canonical" href="https://influencer.whataftergrad.com/blogs">
 
     <!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Materialize & CSS -->
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -50,9 +50,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/spacing.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
 
     <!-- Title -->
-    <title>WhatAfterGrad || Questions</title>
+    <title>WhatAfterGrad || Blogs</title>
 
     <!-- No Script -->
     <noscript>Please enable JavaScript to open this page.</noscript>
@@ -81,7 +82,7 @@
         <a href="/" class="center-align">
             <li class="mt-5"><img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img"></li>
         </a>
-        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align">Dashboard</a></li>
+        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Dashboard</a></li>
         <li class="mt-5"><a href="/blogs" class="waves-effect grey lighten-4 center-align">Blogs</a>
         </li>
         <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align" id="logoutBtn"><i
@@ -89,63 +90,58 @@
     </ul>
 
     <!-- Main Content -->
-    <div class="container">
-        <!-- Hello Text -->
-        <div class="row">
-            <h4 class="heading">Hello <span id="influencerName">Hardik</span> !</h4>
-        </div>
-        <div class="row mt-n4">
-            <p class="heading">We would love to learn more about you..</p>
-        </div>
-        <!-- Questions -->
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">View Blogs</span>
+                            <div class="actions">
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i
+                                        class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table id="blogsTable">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Date</th>
+                                    <th>View Questions</th>
+                                    <th>Read Blogs</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lorem Ipsum Blog</td>
+                                    <td>23rd March, 2020</td>
+                                    <td><a href="/questions"><button type="button" id="viewQuestions"
+                                                class="waves-effect btn btn-wag z-depth-0 center">View</button></a>
+                                    </td>
+                                    <td><a href="#!"><button type="button" id="viewBlog"
+                                                class="waves-effect btn btn-wag z-depth-0 center">Read</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Backend Blog</td>
+                                    <td>23rd March, 2020</td>
+                                    <td><a href="/questions"><button type="button" id="viewQuestions"
+                                                class="waves-effect btn btn-wag z-depth-0 center">View</button></a>
+                                    </td>
+                                    <td><a href="#!"><button type="button" id="viewBlog"
+                                                class="waves-effect btn btn-wag z-depth-0 center">Read</button></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </form>
-        </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
         </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
-        </div>
-        <!-- Submit Btn -->
-        <div class="row center">
-            <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
-                id="submitBtn">Submit</button>
-        </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="p-3 mt-5 page-footer" id="page-footer">
+    <footer class="p-3 page-footer" id="page-footer">
         <div class="footer-copyright">
             <div class="container">
                 © 2020 Copyright WhatAfterGrad.com
@@ -176,7 +172,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/blogs.js"></script>
 
 </body>
 
