@@ -88,25 +88,58 @@
 
     <!-- Left Sidebar -->
     <ul id="sidenav-1" class="sidenav">
-        <a href="/" class="center-align"><li class="mt-5"><img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img"></li></a>
-        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New Influencer</a></li>
-        <li class="mt-5"><a href="/blogRequests" class="waves-effect grey lighten-4 center-align">View Pending Requests</a></li>
-        <li class="mt-5"><a href="/approvedRequests" class="waves-effect grey lighten-4 center-align">View Approved Requests</a></li>
-        <li class="mt-5"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a></li>
-        <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i class="material-icons">exit_to_app</i>Logout</a></li>
+        <a href="/" class="center-align">
+            <li class="mt-5"><img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img"></li>
+        </a>
+        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New
+                Influencer</a></li>
+        <li class="mt-5"><a href="/blogRequests" class="waves-effect grey lighten-4 center-align">View Pending
+                Requests</a></li>
+        <li class="mt-5"><a href="/approvedRequests" class="waves-effect grey lighten-4 center-align">View Approved
+                Requests</a></li>
+        <li class="mt-5"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a>
+        </li>
+        <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i
+                    class="material-icons">exit_to_app</i>Logout</a></li>
     </ul>
 
 
     <!-- Main Content -->
     <main>
-        <div class="container px-5 pt-md-5 pb-md-5 mb-5">
-            <div class="row center pt-md-5">
-                <h3 class="heading pt-md-5 mt-md-5">Hey Admin.</h3>
-                <p>This page is not completed yet. Stay Tuned! Meanwhile explore rest ↓</p>
+        <div class="container">
+            <!-- Hello Text -->
+            <div class="row">
+                <h4 class="heading">Hello Admin !</h4>
             </div>
+            <div class="row mt-n4">
+                <p class="heading">Which influencer are you going to create?</p>
+            </div>
+            <!-- Inputs -->
+            <div class="bordered my-3 px-md-5">
+                <form class="col s12 center mt-4">
+                    <div class="input-field mx-auto w-50">
+                        <input id="name" type="text" class="validate" class="black-text center">
+                        <label for="name" class="black-text">Name</label>
+                    </div>
+                    <div class="input-field mx-auto w-50">
+                        <input id="email" type="email" class="validate" class="black-text center">
+                        <label for="email" class="black-text">Email</label>
+                    </div>
+                    <div class="input-field mx-auto w-50">
+                        <input id="phone" type="tel" class="validate" class="black-text center">
+                        <label for="phone" class="black-text">Phone</label>
+                    </div>
+                    <div class="input-field mx-auto w-50 mt-4">
+                        <textarea id="description" class="validate" class="black-text center p-3"
+                            placeholder="Give us an awesome description about this influencer so we can get ready to call him and inspire millions!"></textarea>
+                        <label for="description" class="black-text heading">Description</label>
+                    </div>
+                </form>
+            </div>
+            <!-- Submit Btn -->
             <div class="row center">
-                <a href="/blogRequests"><button class="btn waves-effect waves-light btn-wag-black z-depth-0" type="button">Go
-                        Home</button></a>
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
+                    id="allotQuestionsNow">Allot Questions</button>
             </div>
         </div>
     </main>
@@ -144,6 +177,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
         crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/globals.js"></script>
 
 </body>
 

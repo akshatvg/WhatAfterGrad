@@ -419,6 +419,8 @@ header {
 textarea {
     height: 10rem;
     resize: vertical;
+    padding: 10px;
+    border-radius: 7px;
 }
 
 /* Sticky Footer */

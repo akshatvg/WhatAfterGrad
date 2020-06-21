@@ -3,16 +3,6 @@
 
 <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169908904-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-169908904-3');
-    </script>
-
     <!-- Meta Tags for SEO -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
@@ -24,7 +14,7 @@
     <meta name="author" content="Akshat Gupta & Sai Sandeep">
     <meta name="copyright" content="WhatAfterGrad">
     <meta name="language" content="en">
-    <meta name="url" content="https://admin.whataftergrad.com">
+    <meta name="url" content="https://admin.whataftergrad.com/allotQuestions">
     <meta name="category" content="General">
     <meta name="coverage" content="Worldwide">
     <meta name="rating" content="General">
@@ -37,7 +27,7 @@
     <meta property="og:title" content="WhatAfterGrad">
     <meta property="og:description"
         content="Monitor inspiring stories from influencers who made mind-boggling decisions during tough times to help keep the readers going.">
-    <meta property="og:url" content="https://admin.whataftergrad.com">
+    <meta property="og:url" content="https://admin.whataftergrad.com/allotQuestions">
     <meta property="og:site_name" content="WhatAfterGrad">
     <meta name="twitter:card" content="website">
     <meta name="twitter:site" content="WhatAfterGrad">
@@ -48,7 +38,7 @@
     <meta itemprop="name" content="WhatAfterGrad">
     <meta itemprop="description"
         content="Monitor inspiring stories from influencers who made mind-boggling decisions during tough times to help keep the readers going.">
-    <link rel="canonical" href="https://admin.whataftergrad.com">
+    <link rel="canonical" href="https://admin.whataftergrad.com/allotQuestions">
 
     <!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Materialize & CSS -->
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -62,7 +52,7 @@
     <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- Title -->
-    <title>WhatAfterGrad || Create Influencer</title>
+    <title>WhatAfterGrad || Allot Questions</title>
 
     <!-- No Script -->
     <noscript>Please enable JavaScript to open this page.</noscript>
@@ -88,12 +78,19 @@
 
     <!-- Left Sidebar -->
     <ul id="sidenav-1" class="sidenav">
-        <a href="/" class="center-align"><li class="mt-5"><img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img"></li></a>
-        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New Influencer</a></li>
-        <li class="mt-5"><a href="/blogRequests" class="waves-effect grey lighten-4 center-align">View Pending Requests</a></li>
-        <li class="mt-5"><a href="/approvedRequests" class="waves-effect grey lighten-4 center-align">View Approved Requests</a></li>
-        <li class="mt-5"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a></li>
-        <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i class="material-icons">exit_to_app</i>Logout</a></li>
+        <a href="/" class="center-align">
+            <li class="mt-5"><img alt="WhatAfterGrad" src="assets/img/logo.svg" class="responsive-img"></li>
+        </a>
+        <li class="mt-5"><a href="/" class="waves-effect grey lighten-4 center-align" id="active">Create New
+                Influencer</a></li>
+        <li class="mt-5"><a href="/blogRequests" class="waves-effect grey lighten-4 center-align">View Pending
+                Requests</a></li>
+        <li class="mt-5"><a href="/approvedRequests" class="waves-effect grey lighten-4 center-align">View Approved
+                Requests</a></li>
+        <li class="mt-5"><a href="/submissions" class="waves-effect grey lighten-4 center-align">View Submissions</a>
+        </li>
+        <li class="mt-5"><a href="/logout" class="waves-effect grey lighten-2 center-align"><i
+                    class="material-icons">exit_to_app</i>Logout</a></li>
     </ul>
 
 
@@ -113,26 +110,27 @@
             </div>
             <!-- Submit Btn -->
             <div class="row center">
-                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4 modal-trigger" href="#confirmationModal" type="button" onclick="addQuestions()"
-                    id="submitBtn">Generate Link For Influencer</button>
-                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button" onclick="addQuestion()"
-                    id="addQuestionBtn">Add a new question</button>
-                    
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4 modal-trigger"
+                    href="#confirmationModal" type="button" onclick="addQuestions()" id="submitBtn">Generate Link For
+                    Influencer</button>
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
+                    onclick="addQuestion()" id="addQuestionBtn">Add a new question</button>
+
             </div>
         </div>
     </main>
 
-        <!-- Modal Structure -->
-        <div id="confirmationModal" class="modal">
-            <div class="modal-content">
-                <h4>Confirm?</h4>
-                <p>Are you sure you want to add questions for this influencer?</p>
-            </div>
-            <div class="modal-footer">
-                <a href="return addQuestions();" class="waves-effect waves-light btn black white-text z-depth-3">Yes</a>
-                <a href="#!" class="modal-close waves-effect waves-light btn grey white-text z-depth-3">No</a>
-            </div>
+    <!-- Modal Structure -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h4>Confirm?</h4>
+            <p>Are you sure you want to add questions for this influencer?</p>
         </div>
+        <div class="modal-footer">
+            <a href="return addQuestions();" class="waves-effect waves-light btn black white-text z-depth-3">Yes</a>
+            <a href="#!" class="modal-close waves-effect waves-light btn grey white-text z-depth-3">No</a>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="p-3 mt-5 page-footer" id="page-footer">
@@ -171,13 +169,13 @@
 
     <script>
         var question = 0;
-        function intializeQuestionCount(){
+        function intializeQuestionCount() {
             question = 1;
             addQuestion();
         }
-        
-        function addQuestion(){
-            html_text =`
+
+        function addQuestion() {
+            html_text = `
             <div class="bordered p-3 my-3" id="questionContainer-${question}">
                 <div class="row p-3">
                     <p class="heading d-inline">Question <span id="questionID-${question}">${question}</span> :</p>
@@ -195,11 +193,11 @@
             question += 1;
         }
 
-        function removeQuestion(id){
+        function removeQuestion(id) {
             var container = `questionContainer-${id}`
             console.log(container)
-            var el = document.getElementById( container );
-            el.parentNode.removeChild( el );
+            var el = document.getElementById(container);
+            el.parentNode.removeChild(el);
         }
 
     </script>
