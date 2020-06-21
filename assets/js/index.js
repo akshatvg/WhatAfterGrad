@@ -80,6 +80,48 @@ function Login() {
     }
 }
 
+function addBlogRequest() {
+        if (!Validateemail()) { } else {
+            document.getElementById("allotQuestionsNow").disabled = true
+            let fetchData = {
+                method: 'POST',
+                body: JSON.stringify({
+                    "email": document.getElementById("email").value,
+                    "full_name": document.getElementById("name").value,
+                    "phone": document.getElementById("phone").value,
+                    "description": document.getElementById("description").value,
+                }),
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }
+            fetch(ADD_BLOG, fetchData)
+                .then(function (res) {
+                    if (res.status == 401) {
+                        ShowToast("Can you login again?")
+                        window.location.replace("/signin")
+                    } else if (res.status == 201) {
+                        ShowToast("Added User Succefully")
+                        document.getElementById("email").value=''
+                        document.getElementById("name").value =''
+                        document.getElementById("phone").value=''
+                        document.getElementById("description").value=''
+                        document.getElementById("allotQuestionsNow").disabled = false
+                    }else if (res.status == 403) {
+                        ShowToast("Something went wrong. Our team has been informed")
+                    } else {
+                        ShowToast("Server error. Our team has been informed. Working on it.");
+                    }
+                    document.getElementById("allotQuestionsNow").disabled = false
+                    return;
+                })
+                .catch((error) => { })
+        }
+    }
+
+
+
 function gup(name) {
     url = location.href;
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
