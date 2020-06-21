@@ -186,7 +186,7 @@ $(document).ready(function () {
         },
         bAutoWidth: false,
         "ajax": {
-            "url": BASE_URL+"api/admin/blogs/all",
+            "url": BASE_URL+"api/admin/questions/all",
             "type": "GET",
             "headers": {
                 'Authorization': localStorage.getItem('TOKEN')
@@ -195,19 +195,33 @@ $(document).ready(function () {
         },
         columns: [{
             "data": "influencer_details.description",
-        },
-        {
-            "data": "email"
-        },{
-            "data": "phone"
-        },{
-            "data": "description"
         },{
             "mData": null,
             "bSortable": false,
             "mRender": function (data, type, full) {
-                return `<button type="button" id="viewAnswers" onclick="Alert("Questiions approve not completed yet. ID : "${full['id']})"
-                            class="waves-effect btn btn-wag z-depth-0 center">Approve Questions</button>`
+                if(full['is_blog_live']){
+                    return '<p> Answers Submitted, Blog is live on portal </p>'
+                }
+                else if(full['is_answers_submmited']){
+                    return '<p> Our team is working on blog. Thanks for your patience! </p>'
+                }else{
+                    return '<p> Questions not yet answered! </p>'
+                }
+            },
+        },{
+            "mData": null,
+            "bSortable": false,
+            "mRender": function (data, type, full) {
+                if(full['is_blog_live']){
+                    return `<a href = "/blog?id=${full['id']}" ><button type="button" 
+                        class="waves-effect btn btn-wag z-depth-0 center">View Blog</button></a>`
+                }else if(full['is_answers_submmited']){
+                    return `<a href = "/answers?id=${full['id']}" ><button type="button" 
+                        class="waves-effect btn btn-wag z-depth-0 center">View Answers</button></a>`
+                }else{
+                    return `<a href = "/questions?id=${full['id']}" ><button type="button" 
+                        class="waves-effect btn btn-wag z-depth-0 center">Answer Questions</button></a>`
+                }
             },
         }
         ],
