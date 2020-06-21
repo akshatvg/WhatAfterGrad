@@ -184,6 +184,32 @@ $(document).ready(function () {
                 '<option value="-1">All</option>' +
                 '</select></div>'
         },
-        bAutoWidth: false
+        bAutoWidth: false,
+        "ajax": {
+            "url": BASE_URL+"api/admin/blogs/all",
+            "type": "GET",
+            "headers": {
+                'Authorization': localStorage.getItem('TOKEN')
+            },
+            "dataSrc": "payload"
+        },
+        columns: [{
+            "data": "influencer_details.description",
+        },
+        {
+            "data": "email"
+        },{
+            "data": "phone"
+        },{
+            "data": "description"
+        },{
+            "mData": null,
+            "bSortable": false,
+            "mRender": function (data, type, full) {
+                return `<button type="button" id="viewAnswers" onclick="Alert("Questiions approve not completed yet. ID : "${full['id']})"
+                            class="waves-effect btn btn-wag z-depth-0 center">Approve Questions</button>`
+            },
+        }
+        ],
     });
 });
