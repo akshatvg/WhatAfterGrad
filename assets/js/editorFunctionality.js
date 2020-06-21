@@ -185,7 +185,7 @@ var editor = new EditorJS({
             {
                 type: 'image',
                 data: {
-                    url: 'assets/codex2x.png',
+                    url: 'https://www.akshatvg.com/assets/img/Public_Speaking_akshatvg.jpg',
                     caption: '',
                     stretched: false,
                     withBorder: true,
@@ -207,6 +207,6 @@ var editor = new EditorJS({
  */
 saveButton.addEventListener('click', function () {
     editor.save().then((savedData) => {
-        cPreview.show(savedData, document.getElementById("output"));
+        console.log("Saved")
     });
 });

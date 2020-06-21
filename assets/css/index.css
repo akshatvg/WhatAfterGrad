@@ -518,10 +518,8 @@ div.material-table .table-footer label {
     color: rgba(0, 0, 0, 0.54);
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row
-        /* works with row or column */
-
-        flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
     -webkit-justify-content: center;
@@ -531,10 +529,8 @@ div.material-table .table-footer label {
 div.material-table .table-footer .select-wrapper {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row
-        /* works with row or column */
-
-        flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
     -webkit-justify-content: center;
