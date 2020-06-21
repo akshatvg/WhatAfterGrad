@@ -93,7 +93,8 @@ function addBlogRequest() {
                 }),
                 credentials: 'same-origin',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': localStorage.getItem('TOKEN')
                 },
             }
             fetch(ADD_BLOG, fetchData)
