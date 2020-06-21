@@ -118,7 +118,6 @@ function submitAnswers(){
         questions.push({"question":textfields[i].id,"answer":textfields[i].value})
     }
    
-    console.log(data)
     let fetchData = {
         method: 'POST',
         body: JSON.stringify(questions),
