@@ -55,8 +55,12 @@ function Login() {
             }
             fetch(LOGIN_URL, fetchData)
                 .then(function (res) {
-                    if (res.status == 401) {
+                    if (res.status == 400) {
                         ShowToast("Wrong credentials!")
+                        document.getElementById("password").value = ''
+                        document.getElementById("signin").disabled = false
+                    }else if (res.status == 403) {
+                        ShowToast("You don't have any active blog requests!")
                         document.getElementById("password").value = ''
                         document.getElementById("signin").disabled = false
                     } else if (res.status == 200) {
