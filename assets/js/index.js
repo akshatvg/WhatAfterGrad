@@ -86,4 +86,49 @@ function Login() {
     }
 }
 
+function questions(){
+    let fetchData = {
+        method: 'GET',
+        credentials: 'same-origin',
+        headers: {
+            'Authorization': localStorage.getItem("TOKEN")
+        },
+    }
+    fetch(QUESTIONS_URL+gup("id"), fetchData).then(function (response) {
+        if (response.status == 200) {
+            response.json().then(function (data) {
+                for(var i=0;i<data.payload.length;i++){
+                    addQuestion(data.payload[i].id,data.payload[i].question)
+                }
+            })
+        } else if (response.status == 401) {
+            window.location.replace('/login/');
+            return ShowToast("Please login to continue ✌️")
+        } else {
+            ShowToast("Error")
+        }
+    
+    });
+}
+
+
+function addQuestion(id,question) {
+    console.log(id,question)
+    html_text = `
+    <div class="bordered p-3 my-3" id="questionContainer-${id}">
+        <div class="row p-3">
+            <p class="heading d-inline">Question :  <span id="questionID-${id}">${question}</span></p>
+        </div>
+        <form class="col s12 mt-n1">
+            <div class="input-field col s12">
+                <textarea class="questionsanswer" id="${id}" class="browser-default bordered p-2"
+                    placeholder="Type your answer here"></textarea>
+            </div>
+        </form>
+    </div>
+    `
+    document.getElementById("questionHandler").insertAdjacentHTML('beforeend', html_text);
+}
+
+
 // console.clear();

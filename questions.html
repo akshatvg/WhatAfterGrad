@@ -59,7 +59,7 @@
 
 </head>
 
-<body>
+<body onload="questions()">
 
     <!-- Navbar -->
     <nav class="nav-center z-depth-0 mb-5">
@@ -97,46 +97,9 @@
         <div class="row mt-n4">
             <p class="heading">We would love to learn more about you..</p>
         </div>
-        <!-- Questions -->
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
-        </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
-        </div>
-        <!-- 1 Question -->
-        <div class="bordered p-3 my-3">
-            <div class="row p-3">
-                <i class="fa fa-user fa-2x"></i>
-                <p class="heading d-inline mx-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <form class="col s12 mt-n1">
-                <div class="input-field col s12">
-                    <textarea id="question" class="browser-default bordered p-2"
-                        placeholder="Type something here......"></textarea>
-                </div>
-            </form>
-        </div>
+       <div id="questionHandler">
+
+       </div>
         <!-- Submit Btn -->
         <div class="row center">
             <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
@@ -177,6 +140,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
         crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/globals.js"></script>
+    
 
 </body>
 
