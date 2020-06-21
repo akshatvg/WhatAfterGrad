@@ -111,6 +111,42 @@ function questions(){
     });
 }
 
+function submitAnswers(){
+    textfields = document.getElementsByClassName("questionsanswer")
+    var questions = []
+    for(var i=0;i<textfields.length;i++){
+        questions.push({"question":textfields[i].id,"answer":textfields[i].value})
+    }
+   
+    console.log(data)
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(questions),
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('TOKEN')
+        },
+    }
+    fetch(ANSWERS_ADD, fetchData)
+        .then(function (res) {
+            if (res.status == 400) {
+                ShowToast("Looks like you messed up something with url!")
+            }else if (res.status == 401) {
+                ShowToast("Not Authorised. Please login again :)")
+                window.location.replace("signin/")
+            } else if (res.status == 204) {
+                ShowToast("All done! Redirecting to dashboard... ")
+                setTimeout(function() {
+                    return window.location.replace("/");
+                  }, 5000);
+            } else {
+                ShowToast("Server error. Our team has been informed. Working on it.");   
+            }
+            return;
+        })
+        .catch((error) => { })
+}
 
 function addQuestion(id,question) {
     console.log(id,question)

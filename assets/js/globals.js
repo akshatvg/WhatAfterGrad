@@ -2,6 +2,7 @@
 BASE_URL = "https://whataftergrad.herokuapp.com/";
 LOGIN_URL = BASE_URL + "api/auth/influencer/signin";
 QUESTIONS_URL = BASE_URL + "api/admin/questions/view/";
+ANSWERS_ADD= BASE_URL + "api/admin/questions/post";
 
 function ShowToast(message) {
     var toastHTML = `<span>${message}</span>`;
