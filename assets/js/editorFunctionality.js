@@ -182,16 +182,7 @@ var editor = new EditorJS({
                     text: 'We have been working on this project more than three years. Several large media projects help us to test and debug the Editor, to make its core more stable. At the same time we significantly improved the API. Now, it can be used to create any plugin for any task. Hope you enjoy. 😏'
                 }
             },
-            {
-                type: 'image',
-                data: {
-                    url: 'assets/codex2x.png',
-                    caption: '',
-                    stretched: false,
-                    withBorder: true,
-                    withBackground: false,
-                }
-            },
+            
         ]
     },
     onReady: function () {
@@ -207,6 +198,7 @@ var editor = new EditorJS({
  */
 saveButton.addEventListener('click', function () {
     editor.save().then((savedData) => {
+        // console.log(savedData)
         cPreview.show(savedData, document.getElementById("output"));
     });
 });
