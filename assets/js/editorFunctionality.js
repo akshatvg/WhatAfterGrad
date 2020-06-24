@@ -129,7 +129,7 @@ function procceed(){
         tools:tools,
         data: final_data,
         onReady: function () {
-            console.log(final_data)
+            ShowToast("Ready!")
         },
         onChange: function () {
             console.log('something changed');
