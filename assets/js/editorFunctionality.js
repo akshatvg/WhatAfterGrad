@@ -5,7 +5,7 @@
 const saveButton = document.getElementById('saveButton');
 
 var final_data = {}
-var tools =  {
+var tools = {
     /**
      * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
      */
@@ -75,9 +75,9 @@ var tools =  {
 
 }
 
-function getAnswers(){
+function getAnswers() {
     id = gup("id")
-    if(id==null || id==undefined){
+    if (id == null || id == undefined) {
         window.location.replace("/submissions")
     }
     let fetchData = {
@@ -88,13 +88,13 @@ function getAnswers(){
             'Authorization': localStorage.getItem('TOKEN')
         },
     }
-    fetch(ANSWERS_VIEW + id , fetchData)
+    fetch(ANSWERS_VIEW + id, fetchData)
         .then(function (res) {
             if (res.status == 200) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
                         console.log(data)
-                        for(var i=0;i<data.answers.length;i++){
+                        for (var i = 0; i < data.answers.length; i++) {
                             html = `<div class="bordered p-3 my-3">
                             <div class="row p-3">
                                 <p class="heading d-inline">Question <span>1</span> : ${data.answers[i].question.question}</p>
@@ -106,13 +106,13 @@ function getAnswers(){
                                 </div>
                             </form>
                         </div>`
-                        $("#questionsContainer").append(html)
+                            $("#questionsContainer").append(html)
                         }
-                        for(var i=0;i<data.images.length;i++){
+                        for (var i = 0; i < data.images.length; i++) {
                             var file_url = data.images[i].bolg_file;
-                            $("#imagesContainer").append(file_url)
+                            $("#imagesContainer").append(file_url + " <button type='button' onclick='copyText(" + file_url + ");' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>content_paste</i></button>" + " <a href='" + file_url + "' target='_blank'><button type='button' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>remove_red_eye</i></button></a>")
                         }
-                        if(data.blog.length>0){
+                        if (data.blog.length > 0) {
                             final_data = data.blog[0].blog_content
                             procceed()
                         }
@@ -123,24 +123,34 @@ function getAnswers(){
             return null
         })
 }
-function procceed(){
+
+function copyText(file_url) {
+    var copyText = file_url;
+    console.log(copyText)
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+}
+
+function procceed() {
     var editor = new EditorJS({
         holder: 'editorjs',
-        tools:tools,
+        tools: tools,
         data: final_data,
         onReady: function () {
             ShowToast("Ready!")
         },
         onChange: function () {
             console.log('something changed');
-        }  
+        }
     });
     saveButton.addEventListener('click', function () {
         editor.save().then((savedData) => {
             console.log("Saved")
             savedata(savedData)
             console.log(editor.data)
-            
+
         });
     });
 }
