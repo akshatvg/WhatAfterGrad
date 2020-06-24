@@ -184,6 +184,32 @@ $(document).ready(function () {
                 '<option value="-1">All</option>' +
                 '</select></div>'
         },
-        bAutoWidth: false
+        bAutoWidth: false,
+        "ajax": {
+            "url": BASE_URL+"api/admin/submissions/all",
+            "type": "GET",
+            "headers": {
+                'Authorization': localStorage.getItem('TOKEN')
+            },
+            "dataSrc": "payload"
+        },
+        columns: [{
+            "data": "influencer_details.full_name",
+        },
+        {
+            "data": "influencer_details.email"
+        },{
+            "data": "influencer_details.phone"
+        },{
+            "data": "influencer_details.description"
+        },{
+            "mData": null,
+            "bSortable": false,
+            "mRender": function (data, type, full) {
+                return `<a href="/editor?id=${full['id']}"+><button type="button" id="viewAnswers"
+                            class="waves-effect btn btn-wag z-depth-0 center">Write Blog</button></a>`
+            },
+        },
+        ],
     });
 });

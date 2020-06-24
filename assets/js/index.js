@@ -178,5 +178,47 @@ function addQuestions(){
 }
 
 
+function savedata(saveData){
+    id = gup("id");
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify({
+            "blog_root": id,
+            "blog_content":saveData
+        }),
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('TOKEN')
+        },
+    }
+    fetch(BLOG_EDITOR, fetchData)
+        .then(function (res) {
+            if (res.status == 401) {
+                ShowToast("Please Login Again!")
+                // swindow.location.replace("/signin")
+            } else if (res.status == 201) {
+                res.json().then(function (data) {
+                    if (data == null) { } else {
+                        ShowToast("Data Saved!");
+                        console.log(data)
+                    }
+                })
+            }  else if (res.status == 400) {
+                res.json().then(function (data) {
+                    if (data == null) { } else {
+                        console.log(data)
+                    }
+                })
+            } else {
+                ShowToast("Server error. Our team has been informed. Working on it.");
+                document.getElementById("email").value = '';
+                document.getElementById("password").value = '';
+                document.getElementById("signin").disabled = false
+            }
+            return;
+        })
+        .catch((error) => { })
 
+}
 // console.clear();

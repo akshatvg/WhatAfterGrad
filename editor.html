@@ -60,7 +60,7 @@
 
 </head>
 
-<body>
+<body onload="getAnswers()" >
 
     <!-- Navbar -->
     <nav class="nav-center z-depth-0 mb-5">
@@ -97,11 +97,25 @@
 
     <!-- Main Content -->
     <main>
+     <div class="container">
+            <!-- Hello Text -->
+            <div class="row">
+                <h4 class="heading">Hello Admin !</h4>
+            </div>
+            <div class="row mt-n4">
+                <p class="heading">Read these answers carefully before publishing it into a blog.</p>
+            </div>
+            <div id="questionsContainer">
+            </div>
+            <div id="imagesContainer">
+            </div>
+            
+        </div>
         <div class="ce-example">
             <div class="ce-example__content _ce-example__content--small">
                 <div id="editorjs"></div>
                 <div class="ce-example__button" id="saveButton">
-                    editor.save()
+                    blog_post.save()
                 </div>
             </div>
         </div>
