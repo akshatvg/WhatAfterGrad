@@ -110,7 +110,7 @@ function getAnswers() {
                         }
                         for (var i = 0; i < data.images.length; i++) {
                             var file_url = data.images[i].bolg_file;
-                            $("#imagesContainer").append(file_url + " <button type='button' onclick='copyText(" + file_url + ");' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>content_paste</i></button>" + " <a href='" + file_url + "' target='_blank'><button type='button' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>remove_red_eye</i></button></a>")
+                            $("#imagesContainer").append(file_url + " <button type='button' onclick='copyText(\"" + file_url + "\")' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>content_paste</i></button>" + " <a href='" + file_url + "' target='_blank'><button type='button' class='waves-effect waves-light btn-wag-black'><i class='material-icons'>remove_red_eye</i></button></a>")
                         }
                         if (data.blog.length > 0) {
                             final_data = data.blog[0].blog_content
@@ -126,7 +126,6 @@ function getAnswers() {
 
 function copyText(file_url) {
     var copyText = file_url;
-    console.log(copyText)
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
