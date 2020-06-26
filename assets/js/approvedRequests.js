@@ -207,9 +207,11 @@ $(document).ready(function () {
             "bSortable": false,
             "mRender": function (data, type, full) {
                 return `<a href="/allotQuestions?id=${full['id']}"+><button type="button" id="viewAnswers"
-                            class="waves-effect btn btn-wag z-depth-0 center">Allot Questions</button></a>`
+                            class="waves-effect btn btn-wag z-depth-0 center">Allot</button></a>`
             },
         },
         ],
     });
 });
+
+console.clear();

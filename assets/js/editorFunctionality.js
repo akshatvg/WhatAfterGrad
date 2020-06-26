@@ -153,3 +153,5 @@ function procceed() {
         });
     });
 }
+
+console.clear();

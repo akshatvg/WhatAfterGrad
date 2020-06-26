@@ -206,10 +206,12 @@ $(document).ready(function () {
             "mData": null,
             "bSortable": false,
             "mRender": function (data, type, full) {
-                return `<button type="button" id="viewAnswers" onclick="Alert("Questiions approve not completed yet. ID : "${full['id']})"
+                return `<button type="button" id="viewAnswers" onclick="Alert("Questions approval not completed yet. ID : "${full['id']})"
                             class="waves-effect btn btn-wag z-depth-0 center">Approve Questions</button>`
             },
         }
         ],
     });
 });
+
+console.clear();

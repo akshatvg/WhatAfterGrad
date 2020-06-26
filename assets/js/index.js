@@ -19,23 +19,26 @@
 
 })(jQuery);
 
+// Validate Email
 function Validateemail() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value)) {
         return true;
     }
-    ShowToast("Please enter a valid email address.");
+    ShowToast("Please Enter a Valid Email Address");
     return false;
 }
 
+// Validate Password
 function ValidatePass() {
     if (document.getElementById("password").value.length > 5)
         return true;
     else
-        ShowToast("Wrong password");
+        ShowToast("Invalid Password");
     return false;
 
 }
 
+// Login
 function Login() {
     if (!Validateemail()) { } else {
         if (!ValidatePass()) { } else {
@@ -54,7 +57,7 @@ function Login() {
             fetch(LOGIN_URL, fetchData)
                 .then(function (res) {
                     if (res.status == 400) {
-                        ShowToast("Wrong credentials!")
+                        ShowToast("Wrong Credentials")
                         document.getElementById("password").value = ''
                         document.getElementById("signin").disabled = false
                     } else if (res.status == 200) {
@@ -68,7 +71,7 @@ function Login() {
                             }
                         })
                     } else {
-                        ShowToast("Server error. Our team has been informed. Working on it.");
+                        ShowToast("Server error. Our team has been informed. We are working on it.");
                         document.getElementById("email").value = '';
                         document.getElementById("password").value = '';
                         document.getElementById("signin").disabled = false
@@ -80,49 +83,49 @@ function Login() {
     }
 }
 
+// Add Blog
 function addBlogRequest() {
-        if (!Validateemail()) { } else {
-            document.getElementById("allotQuestionsNow").disabled = true
-            let fetchData = {
-                method: 'POST',
-                body: JSON.stringify({
-                    "email": document.getElementById("email").value,
-                    "full_name": document.getElementById("name").value,
-                    "phone": document.getElementById("phone").value,
-                    "description": document.getElementById("description").value,
-                }),
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('TOKEN')
-                },
-            }
-            fetch(ADD_BLOG, fetchData)
-                .then(function (res) {
-                    if (res.status == 401) {
-                        ShowToast("Can you login again?")
-                        window.location.replace("/signin")
-                    } else if (res.status == 201) {
-                        ShowToast("Added User Succefully")
-                        document.getElementById("email").value=''
-                        document.getElementById("name").value =''
-                        document.getElementById("phone").value=''
-                        document.getElementById("description").value=''
-                        document.getElementById("allotQuestionsNow").disabled = false
-                    }else if (res.status == 403) {
-                        ShowToast("Something went wrong. Our team has been informed")
-                    } else {
-                        ShowToast("Server error. Our team has been informed. Working on it.");
-                    }
-                    document.getElementById("allotQuestionsNow").disabled = false
-                    return;
-                })
-                .catch((error) => { })
+    if (!Validateemail()) { } else {
+        document.getElementById("allotQuestionsNow").disabled = true
+        let fetchData = {
+            method: 'POST',
+            body: JSON.stringify({
+                "email": document.getElementById("email").value,
+                "full_name": document.getElementById("name").value,
+                "phone": document.getElementById("phone").value,
+                "description": document.getElementById("description").value,
+            }),
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('TOKEN')
+            },
         }
+        fetch(ADD_BLOG, fetchData)
+            .then(function (res) {
+                if (res.status == 401) {
+                    ShowToast("Can you please login again?")
+                    window.location.replace("/signin")
+                } else if (res.status == 201) {
+                    ShowToast("Added User Succefully!")
+                    document.getElementById("email").value = ''
+                    document.getElementById("name").value = ''
+                    document.getElementById("phone").value = ''
+                    document.getElementById("description").value = ''
+                    document.getElementById("allotQuestionsNow").disabled = false
+                } else if (res.status == 403) {
+                    ShowToast("Something went wrong. Our team has been informed. We are working on it.")
+                } else {
+                    ShowToast("Server error. Our team has been informed. We are working on it.");
+                }
+                document.getElementById("allotQuestionsNow").disabled = false
+                return;
+            })
+            .catch((error) => { })
     }
+}
 
-
-
+// GUP Function
 function gup(name) {
     url = location.href;
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -132,16 +135,16 @@ function gup(name) {
     return results == null ? null : results[1];
 }
 
-
-function addQuestions(){
+// Add Question
+function addQuestions() {
     textfields = document.getElementsByClassName("questionstext")
     var questions = []
-    for(var i=0;i<textfields.length;i++){
+    for (var i = 0; i < textfields.length; i++) {
         questions.push(textfields[i].value)
     }
     data = {
-        "id":gup("id"),
-        "questions":questions
+        "id": gup("id"),
+        "questions": questions
     }
     console.log(data)
     let fetchData = {
@@ -156,35 +159,35 @@ function addQuestions(){
     fetch(QUESTION_ADD, fetchData)
         .then(function (res) {
             if (res.status == 400) {
-                ShowToast("Looks like you messed up something with url!")
-            }else if (res.status == 404) {
-                ShowToast("Looks like you messed up something with url!")
-            }else if (res.status == 401) {
+                ShowToast("Looks like you tried doing something fishy!")
+            } else if (res.status == 404) {
+                ShowToast("Looks like you tried doing something fishy!")
+            } else if (res.status == 401) {
                 ShowToast("Not Authorised")
                 window.location.replace("signin/")
             } else if (res.status == 201) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
-                        ShowToast("Add Success!")
+                        ShowToast("Added Successfully & Sent Credentials to")
                         window.location.replace("/approvedRequests")
                     }
                 })
             } else {
-                ShowToast("Server error. Our team has been informed. Working on it.");   
+                ShowToast("Server error. Our team has been informed. We are working on it.");
             }
             return;
         })
         .catch((error) => { })
 }
 
-
-function savedata(saveData){
+// Save Data
+function savedata(saveData) {
     id = gup("id");
     let fetchData = {
         method: 'POST',
         body: JSON.stringify({
             "blog_root": id,
-            "blog_content":saveData
+            "blog_content": saveData
         }),
         credentials: 'same-origin',
         headers: {
@@ -204,14 +207,14 @@ function savedata(saveData){
                         console.log(data)
                     }
                 })
-            }  else if (res.status == 400) {
+            } else if (res.status == 400) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
                         console.log(data)
                     }
                 })
             } else {
-                ShowToast("Server error. Our team has been informed. Working on it.");
+                ShowToast("Server error. Our team has been informed. We are working on it.");
                 document.getElementById("email").value = '';
                 document.getElementById("password").value = '';
                 document.getElementById("signin").disabled = false
@@ -221,4 +224,5 @@ function savedata(saveData){
         .catch((error) => { })
 
 }
-// console.clear();
+
+console.clear();
