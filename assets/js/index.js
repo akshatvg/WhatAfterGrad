@@ -146,7 +146,7 @@ function addQuestions() {
         "id": gup("id"),
         "questions": questions
     }
-    console.log(data)
+    // console.log(data)
     let fetchData = {
         method: 'POST',
         body: JSON.stringify(data),
@@ -203,14 +203,14 @@ function savedata(saveData) {
             } else if (res.status == 201) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
-                        ShowToast("Data Saved!");
-                        console.log(data)
+                        ShowToast("Blog Published!");
+                        // console.log(data)
                     }
                 })
             } else if (res.status == 400) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
-                        console.log(data)
+                        // console.log(data)
                     }
                 })
             } else {

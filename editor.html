@@ -50,7 +50,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/spacing.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/editor.css">
 
     <!-- Title -->
     <title>WhatAfterGrad || Editor</title>
@@ -97,26 +96,29 @@
 
     <!-- Main Content -->
     <main>
+
         <div class="container">
             <!-- Hello Text -->
             <div class="row">
                 <h4 class="heading">Hello Admin !</h4>
             </div>
             <div class="row mt-n4">
-                <p class="heading">Read these answers carefully before publishing it into a blog.</p>
+                <p class="heading">Read these answers carefully before publishing them as a blog.</p>
             </div>
             <div id="questionsContainer">
             </div>
             <div id="imagesContainer">
             </div>
-
         </div>
-        <div class="ce-example">
-            <div class="ce-example__content _ce-example__content--small">
-                <div id="editorjs"></div>
-                <div class="ce-example__button" id="saveButton">
-                    blog.save()
-                </div>
+
+        <!-- Editor -->
+        <div id="editorjs"></div>
+
+        <!-- Publish Blog -->
+        <div class="container mt-n5">
+            <div class="row center">
+                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center" type="button"
+                    id="saveButton">Publish Blog</button>
             </div>
         </div>
     </main>

@@ -93,7 +93,7 @@ function getAnswers() {
             if (res.status == 200) {
                 res.json().then(function (data) {
                     if (data == null) { } else {
-                        console.log(data)
+                        // console.log(data)
                         for (var i = 0; i < data.answers.length; i++) {
                             html = `<div class="bordered p-3 my-3">
                             <div class="row p-3">
@@ -125,11 +125,11 @@ function getAnswers() {
 }
 
 function copyText(file_url) {
-    var copyText = file_url;
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(file_url).select();
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
+    $temp.remove();
 }
 
 function procceed() {
@@ -138,17 +138,17 @@ function procceed() {
         tools: tools,
         data: final_data,
         onReady: function () {
-            ShowToast("Ready!")
+            ShowToast("Ready to publish?")
         },
         onChange: function () {
-            console.log('something changed');
+            // console.log('something changed');
         }
     });
     saveButton.addEventListener('click', function () {
         editor.save().then((savedData) => {
-            console.log("Saved")
+            // console.log("Saved")
             savedata(savedData)
-            console.log(editor.data)
+            // console.log(editor.data)
 
         });
     });
