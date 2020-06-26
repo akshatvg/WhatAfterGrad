@@ -186,7 +186,7 @@ $(document).ready(function () {
         },
         bAutoWidth: false,
         "ajax": {
-            "url": BASE_URL+"api/admin/questions/all",
+            "url": BASE_URL + "api/admin/questions/all",
             "type": "GET",
             "headers": {
                 'Authorization': localStorage.getItem('TOKEN')
@@ -195,35 +195,37 @@ $(document).ready(function () {
         },
         columns: [{
             "data": "influencer_details.description",
-        },{
+        }, {
             "mData": null,
             "bSortable": false,
             "mRender": function (data, type, full) {
-                if(full['is_blog_live']){
+                if (full['is_blog_live']) {
                     return '<p> Answers Submitted, Blog is live on portal </p>'
                 }
-                else if(full['is_answers_submmited']){
+                else if (full['is_answers_submmited']) {
                     return '<p> Our team is working on blog. Thanks for your patience! </p>'
-                }else{
+                } else {
                     return '<p> Questions not yet answered! </p>'
                 }
             },
-        },{
+        }, {
             "mData": null,
             "bSortable": false,
             "mRender": function (data, type, full) {
-                if(full['is_blog_live']){
+                if (full['is_blog_live']) {
                     return `<a href = "/blog?id=${full['id']}" ><button type="button" 
                         class="waves-effect btn btn-wag z-depth-0 center">View Blog</button></a>`
-                }else if(full['is_answers_submmited']){
+                } else if (full['is_answers_submmited']) {
                     return `<a href = "/answers?id=${full['id']}" ><button type="button" 
                         class="waves-effect btn btn-wag z-depth-0 center">View Answers</button></a>`
-                }else{
+                } else {
                     return `<a href = "/questions?id=${full['id']}" ><button type="button" 
-                        class="waves-effect btn btn-wag z-depth-0 center">Answer Questions</button></a>`
+                        class="waves-effect btn btn-wag z-depth-0 center">Answer</button></a>`
                 }
             },
         }
         ],
     });
 });
+
+console.clear();

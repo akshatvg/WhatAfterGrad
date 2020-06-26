@@ -14,7 +14,7 @@
     <meta name="author" content="Akshat Gupta & Sai Sandeep">
     <meta name="copyright" content="WhatAfterGrad">
     <meta name="language" content="en">
-    <meta name="url" content="https://influencer.whataftergrad.com/questions">
+    <meta name="url" content="https://influencer.whataftergrad.com/answers">
     <meta name="category" content="General">
     <meta name="coverage" content="Worldwide">
     <meta name="rating" content="General">
@@ -27,7 +27,7 @@
     <meta property="og:title" content="WhatAfterGrad">
     <meta property="og:description"
         content="Write inspiring stories as an influencer who made mind-boggling decisions during tough times to help keep others going.">
-    <meta property="og:url" content="https://influencer.whataftergrad.com/questions">
+    <meta property="og:url" content="https://influencer.whataftergrad.com/answers">
     <meta property="og:site_name" content="WhatAfterGrad">
     <meta name="twitter:card" content="website">
     <meta name="twitter:site" content="WhatAfterGrad">
@@ -38,7 +38,7 @@
     <meta itemprop="name" content="WhatAfterGrad">
     <meta itemprop="description"
         content="Write inspiring stories as an influencer who made mind-boggling decisions during tough times to help keep others going.">
-    <link rel="canonical" href="https://influencer.whataftergrad.com/questions">
+    <link rel="canonical" href="https://influencer.whataftergrad.com/answers">
 
     <!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Materialize & CSS -->
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -52,14 +52,14 @@
     <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- Title -->
-    <title>WhatAfterGrad || Questions</title>
+    <title>WhatAfterGrad || Answers</title>
 
     <!-- No Script -->
     <noscript>Please enable JavaScript to open this page.</noscript>
 
 </head>
 
-<body onload="questions()">
+<body onload="answers()">
 
     <!-- Navbar -->
     <nav class="nav-center z-depth-0 mb-5">
@@ -96,32 +96,33 @@
                 <h4 class="heading">Hello there !</h4>
             </div>
             <div class="row mt-n4">
-                <p class="heading">We would love to learn more about you..</p>
+                <p class="heading">Want to read your submission again?</p>
             </div>
             <div id="questionHandler">
-
+                <div class="bordered p-3 my-3" id="questionContainer-${id}">
+                    <div class="row p-3">
+                        <p class="heading d-inline">Question : <span id="questionID-${id}">${question}</span></p>
+                    </div>
+                    <form class="col s12 mt-n1">
+                        <div class="input-field col s12">
+                            <textarea class="questionsanswer" id="${id}" class="browser-default bordered"
+                                placeholder="Your Answer"></textarea>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="bordered p-3 my-3" id="influencerImages">
                 <div class="row p-3">
                     <p class="heading d-inline">Images you want in the blog :</p>
                 </div>
-                <form class="col s12 mt-n1">
-                    <div class="file-field input-field">
-                        <div class="btn btn-wag-black-file z-depth-0 waves-effect waves-light">
-                            <span>Choose</span>
-                            <input type="file" multiple accept="image/*">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload one or more images"
-                                disabled>
-                        </div>
-                    </div>
-                </form>
+                <img src="assets/img/blog-h-1.svg" alt="" class="img-responsive">
+                <img src="assets/img/blog-h-2.svg" alt="" class="img-responsive">
+                <img src="assets/img/blog-h-3.svg" alt="" class="img-responsive">
             </div>
-            <!-- Submit Btn -->
+            <!-- Back Btn -->
             <div class="row center">
-                <button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4" type="button"
-                    onclick="submitAnswers()" id="submitBtn">Submit</button>
+                <a href="/"><button class="waves-effect waves-light btn btn-wag-black z-depth-0 center mt-4"
+                        type="button">Go Home</button></a>
             </div>
         </div>
     </main>

@@ -2,14 +2,15 @@
 BASE_URL = "https://whataftergrad.herokuapp.com/";
 LOGIN_URL = BASE_URL + "api/auth/influencer/signin";
 QUESTIONS_URL = BASE_URL + "api/admin/questions/view/";
-ANSWERS_ADD= BASE_URL + "api/admin/questions/post";
+ANSWERS_ADD = BASE_URL + "api/admin/questions/post";
 
+// Toast
 function ShowToast(message) {
     var toastHTML = `<span>${message}</span>`;
     M.toast({ html: toastHTML });
 }
 
-
+// GUP Function
 function gup(name) {
     url = location.href;
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -18,3 +19,5 @@ function gup(name) {
     var results = regex.exec(url);
     return results == null ? null : results[1];
 }
+
+console.clear();

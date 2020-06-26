@@ -332,6 +332,14 @@ header {
     width: 120px;
 }
 
+.btn-wag-black-file,
+.btn-wag-black-file:hover,
+.btn-wag-black-file:focus {
+    background-color: #292929;
+    color: white;
+    border-radius: 5px;
+}
+
 .btn-wag-black-inverse,
 .btn-wag-black-inverse:hover,
 .btn-wag-black-inverse:focus {
