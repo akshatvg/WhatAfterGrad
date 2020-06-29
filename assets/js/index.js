@@ -186,7 +186,8 @@ function savedata(saveData) {
         method: 'POST',
         body: JSON.stringify({
             "blog_root": id,
-            "blog_content": saveData
+            "blog_content": saveData,
+            "topic": document.getElementById("blogTitle").value
         }),
         credentials: 'same-origin',
         headers: {
@@ -209,7 +210,7 @@ function savedata(saveData) {
             } else if (res.status == 400) {
                 res.json().then(function(data) {
                     if (data == null) {} else {
-                        // console.log(data)
+                        console.log(data)
                     }
                 })
             } else {
