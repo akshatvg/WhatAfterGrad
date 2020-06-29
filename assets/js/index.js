@@ -246,11 +246,7 @@ function MakeItLive() {
                 ShowToast("Please Login Again!")
                 window.location.replace("/signin")
             } else if (res.status == 204) {
-                res.json().then(function(data) {
-                    if (data == null) {} else {
-                        ShowToast("Blog Published!");
-                    }
-                })
+                ShowToast("Blog Published!");
             } else if (res.status == 404) {
                 ShowToast("Looks live you messed up with url. Copy and reload page.")
             } else {
