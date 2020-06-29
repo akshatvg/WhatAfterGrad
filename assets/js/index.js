@@ -187,7 +187,8 @@ function savedata(saveData) {
         body: JSON.stringify({
             "blog_root": id,
             "blog_content": saveData,
-            "topic": document.getElementById("blogTitle").value
+            "topic": document.getElementById("blogTitle").value,
+            "banner_image": document.getElementById("imageLink").value,
         }),
         credentials: 'same-origin',
         headers: {
