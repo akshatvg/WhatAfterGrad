@@ -1,11 +1,10 @@
-
-(function ($) {
+(function($) {
     "use strict";
 
     // Loader
-    $(function () {
-        var loader = function () {
-            setTimeout(function () {
+    $(function() {
+        var loader = function() {
+            setTimeout(function() {
                 if ($('#loader').length > 0) {
                     $('#loader').removeClass('show');
                 }
@@ -48,8 +47,8 @@ function ValidatePassSignup() {
 
 
 function Login() {
-    if (!Validateemail()) { } else {
-        if (!ValidatePass()) { } else {
+    if (!Validateemail()) {} else {
+        if (!ValidatePass()) {} else {
             document.getElementById("signin").disabled = true
             let fetchData = {
                 method: 'POST',
@@ -63,14 +62,14 @@ function Login() {
                 },
             }
             fetch(LOGIN_URL, fetchData)
-                .then(function (res) {
+                .then(function(res) {
                     if (res.status == 401) {
                         ShowToast("Wrong credentials!")
                         document.getElementById("password").value = ''
                         document.getElementById("signin").disabled = false
                     } else if (res.status == 200) {
-                        res.json().then(function (data) {
-                            if (data == null) { } else {
+                        res.json().then(function(data) {
+                            if (data == null) {} else {
                                 ShowToast("Login Success")
                                 localStorage.setItem("TOKEN", "Token " + data.user.token)
                                 localStorage.setItem("FULL_NAME", data.user.full_name)
@@ -86,22 +85,22 @@ function Login() {
                     }
                     return;
                 })
-                .catch((error) => { })
+                .catch((error) => {})
         }
     }
 }
 
 function SignUp() {
-    if (!Validateemail()) { } else {
-        if (!ValidatePassSignup()) { } else {
+    if (!Validateemail()) {} else {
+        if (!ValidatePassSignup()) {} else {
             document.getElementById("signup").disabled = true
             let fetchData = {
                 method: 'POST',
                 body: JSON.stringify({
                     "username": document.getElementById("email").value,
                     "password": document.getElementById("password").value,
-                    "phone":document.getElementById("phone").value,
-                    "full_name":document.getElementById("name").value,
+                    "phone": document.getElementById("phone").value,
+                    "full_name": document.getElementById("name").value,
                 }),
                 credentials: 'same-origin',
                 headers: {
@@ -109,7 +108,7 @@ function SignUp() {
                 },
             }
             fetch(REGISTER_URL, fetchData)
-                .then(function (res) {
+                .then(function(res) {
                     console.log(res.status);
                     console.log(res.json)
                     if (res.status == 400) {
@@ -117,8 +116,8 @@ function SignUp() {
                         document.getElementById("password").value = ''
                         document.getElementById("signup").disabled = false
                     } else if (res.status == 201) {
-                        res.json().then(function (data) {
-                            if (data == null) { } else {
+                        res.json().then(function(data) {
+                            if (data == null) {} else {
                                 ShowToast("Login Success")
                                 localStorage.setItem("TOKEN", "Token " + data.user.token)
                                 localStorage.setItem("FULL_NAME", data.user.full_name)
@@ -134,7 +133,7 @@ function SignUp() {
                     }
                     return;
                 })
-                .catch((error) => { })
+                .catch((error) => {})
 
 
         }
@@ -158,7 +157,7 @@ function Linkedin() {
     let fetchData = {
         method: 'POST',
         body: JSON.stringify({
-            "code":gup('code', window.location.href)
+            "code": gup('code', window.location.href)
         }),
         credentials: 'same-origin',
         headers: {
@@ -166,39 +165,67 @@ function Linkedin() {
         },
     }
     fetch(LINKEDIN_URL, fetchData)
-        .then(function (res) {
+        .then(function(res) {
             if (res.status == 400) {
                 ShowToast("Authentication Failed! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 5000);
+                }, 5000);
             } else if (res.status == 403) {
                 ShowToast("Authentication code missing! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 5000);
+                }, 5000);
             } else if (res.status == 206) {
                 ShowToast("Account not authorised. You can authroise account in settings after logging in! Redirecting to login...")
                 setTimeout(function() {
                     return window.location.replace("/signin/");
-                  }, 5000);
+                }, 5000);
             } else if (res.status == 200) {
-                res.json().then(function (data) {
-                    if (data == null) { } else {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
                         ShowToast("Login Success")
                         localStorage.setItem("TOKEN", "Token " + data.user.token)
                         localStorage.setItem("FULL_NAME", data.user.full_name)
                         return window.location.replace("/");
                     }
                 })
-            }else {
+            } else {
                 ShowToast("Server error. Our team has been informed. Working on it.");
                 document.getElementById("email").value = '';
                 document.getElementById("password").value = '';
             }
             return;
         })
-        .catch((error) => { })
+        .catch((error) => {})
+}
+
+
+function DashBoard() {
+    let fetchData = {
+        method: 'GET',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }
+    fetch(DASH_URL, fetchData)
+        .then(function(res) {
+            if (res.status == 200) {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
+                        ShowToast("Data reached")
+                        console.log(data)
+                    }
+                })
+            } else {
+                ShowToast("Server error. Our team has been informed. Working on it.");
+                document.getElementById("email").value = '';
+                document.getElementById("password").value = '';
+            }
+            return;
+        })
+        .catch((error) => {})
 }
 
 // console.clear();
