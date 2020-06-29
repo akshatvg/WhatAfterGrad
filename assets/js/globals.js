@@ -1,10 +1,11 @@
-
 BASE_URL = "https://whataftergrad.herokuapp.com/";
 LOGIN_URL = BASE_URL + "api/auth/admin/sigin";
 QUESTION_ADD = BASE_URL + "api/admin/questions/add";
 ADD_BLOG = BASE_URL + "api/admin/blog/new";
 ANSWERS_VIEW = BASE_URL + "api/admin/answers/view/"
 BLOG_EDITOR = BASE_URL + "api/blog/root"
+LIVE_URL = BASE_URL + "api/admin/blog/live"
+
 
 // Common Toast
 function ShowToast(message) {
@@ -12,4 +13,4 @@ function ShowToast(message) {
     M.toast({ html: toastHTML });
 }
 
-console.clear();
+// console.clear();

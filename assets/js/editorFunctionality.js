@@ -1,4 +1,3 @@
-
 /**
  * Saving button
  */
@@ -89,10 +88,10 @@ function getAnswers() {
         },
     }
     fetch(ANSWERS_VIEW + id, fetchData)
-        .then(function (res) {
+        .then(function(res) {
             if (res.status == 200) {
-                res.json().then(function (data) {
-                    if (data == null) { } else {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
                         // console.log(data)
                         for (var i = 0; i < data.answers.length; i++) {
                             html = `<div class="bordered p-3 my-3">
@@ -114,8 +113,11 @@ function getAnswers() {
                         }
                         if (data.blog.length > 0) {
                             final_data = data.blog[0].blog_content
-                            procceed()
+                            console.log(final_data)
+                        } else {
+                            final_data = []
                         }
+                        procceed(final_data)
                     }
                     return null
                 })
@@ -132,26 +134,26 @@ function copyText(file_url) {
     $temp.remove();
 }
 
-function procceed() {
+function procceed(final_data) {
     var editor = new EditorJS({
         holder: 'editorjs',
         tools: tools,
         data: final_data,
-        onReady: function () {
+        onReady: function() {
             ShowToast("Ready to publish?")
         },
-        onChange: function () {
+        onChange: function() {
             // console.log('something changed');
         }
     });
-    saveButton.addEventListener('click', function () {
+    saveButton.addEventListener('click', function() {
         editor.save().then((savedData) => {
             // console.log("Saved")
             savedata(savedData)
-            // console.log(editor.data)
+                // console.log(editor.data)
 
         });
     });
 }
 
-console.clear();
+// console.clear();

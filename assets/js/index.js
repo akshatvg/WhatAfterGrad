@@ -1,11 +1,10 @@
-
-(function ($) {
+(function($) {
     "use strict";
 
     // Loader
-    $(function () {
-        var loader = function () {
-            setTimeout(function () {
+    $(function() {
+        var loader = function() {
+            setTimeout(function() {
                 if ($('#loader').length > 0) {
                     $('#loader').removeClass('show');
                 }
@@ -40,8 +39,8 @@ function ValidatePass() {
 
 // Login
 function Login() {
-    if (!Validateemail()) { } else {
-        if (!ValidatePass()) { } else {
+    if (!Validateemail()) {} else {
+        if (!ValidatePass()) {} else {
             document.getElementById("signin").disabled = true
             let fetchData = {
                 method: 'POST',
@@ -55,14 +54,14 @@ function Login() {
                 },
             }
             fetch(LOGIN_URL, fetchData)
-                .then(function (res) {
+                .then(function(res) {
                     if (res.status == 400) {
                         ShowToast("Wrong Credentials")
                         document.getElementById("password").value = ''
                         document.getElementById("signin").disabled = false
                     } else if (res.status == 200) {
-                        res.json().then(function (data) {
-                            if (data == null) { } else {
+                        res.json().then(function(data) {
+                            if (data == null) {} else {
                                 ShowToast("Login Success")
                                 localStorage.setItem("TOKEN", "Token " + data.user.token)
                                 localStorage.setItem("FULL_NAME", data.user.full_name)
@@ -78,14 +77,14 @@ function Login() {
                     }
                     return;
                 })
-                .catch((error) => { })
+                .catch((error) => {})
         }
     }
 }
 
 // Add Blog
 function addBlogRequest() {
-    if (!Validateemail()) { } else {
+    if (!Validateemail()) {} else {
         document.getElementById("allotQuestionsNow").disabled = true
         let fetchData = {
             method: 'POST',
@@ -102,7 +101,7 @@ function addBlogRequest() {
             },
         }
         fetch(ADD_BLOG, fetchData)
-            .then(function (res) {
+            .then(function(res) {
                 if (res.status == 401) {
                     ShowToast("Can you please login again?")
                     window.location.replace("/signin")
@@ -121,7 +120,7 @@ function addBlogRequest() {
                 document.getElementById("allotQuestionsNow").disabled = false
                 return;
             })
-            .catch((error) => { })
+            .catch((error) => {})
     }
 }
 
@@ -143,10 +142,10 @@ function addQuestions() {
         questions.push(textfields[i].value)
     }
     data = {
-        "id": gup("id"),
-        "questions": questions
-    }
-    // console.log(data)
+            "id": gup("id"),
+            "questions": questions
+        }
+        // console.log(data)
     let fetchData = {
         method: 'POST',
         body: JSON.stringify(data),
@@ -157,7 +156,7 @@ function addQuestions() {
         },
     }
     fetch(QUESTION_ADD, fetchData)
-        .then(function (res) {
+        .then(function(res) {
             if (res.status == 400) {
                 ShowToast("Looks like you tried doing something fishy!")
             } else if (res.status == 404) {
@@ -166,8 +165,8 @@ function addQuestions() {
                 ShowToast("Not Authorised")
                 window.location.replace("signin/")
             } else if (res.status == 201) {
-                res.json().then(function (data) {
-                    if (data == null) { } else {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
                         ShowToast("Added Successfully & Sent Credentials to")
                         window.location.replace("/approvedRequests")
                     }
@@ -177,7 +176,7 @@ function addQuestions() {
             }
             return;
         })
-        .catch((error) => { })
+        .catch((error) => {})
 }
 
 // Save Data
@@ -196,20 +195,20 @@ function savedata(saveData) {
         },
     }
     fetch(BLOG_EDITOR, fetchData)
-        .then(function (res) {
+        .then(function(res) {
             if (res.status == 401) {
                 ShowToast("Please Login Again!")
-                // swindow.location.replace("/signin")
+                window.location.replace("/signin")
             } else if (res.status == 201) {
-                res.json().then(function (data) {
-                    if (data == null) { } else {
-                        ShowToast("Blog Published!");
+                res.json().then(function(data) {
+                    if (data == null) {} else {
+                        ShowToast("Blog Saved!");
                         // console.log(data)
                     }
                 })
             } else if (res.status == 400) {
-                res.json().then(function (data) {
-                    if (data == null) { } else {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
                         // console.log(data)
                     }
                 })
@@ -221,8 +220,46 @@ function savedata(saveData) {
             }
             return;
         })
-        .catch((error) => { })
+        .catch((error) => {})
 
 }
 
-console.clear();
+
+function MakeItLive() {
+    id = gup("id");
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify({
+            "id": id
+        }),
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('TOKEN')
+        },
+    }
+    fetch(LIVE_URL, fetchData)
+        .then(function(res) {
+            if (res.status == 401) {
+                ShowToast("Please Login Again!")
+                window.location.replace("/signin")
+            } else if (res.status == 204) {
+                res.json().then(function(data) {
+                    if (data == null) {} else {
+                        ShowToast("Blog Published!");
+                    }
+                })
+            } else if (res.status == 404) {
+                ShowToast("Looks live you messed up with url. Copy and reload page.")
+            } else {
+                ShowToast("Server error. Our team has been informed. We are working on it.");
+                document.getElementById("email").value = '';
+                document.getElementById("password").value = '';
+                document.getElementById("signin").disabled = false
+            }
+            return;
+        })
+        .catch((error) => {})
+}
+
+// console.clear();
