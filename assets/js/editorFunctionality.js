@@ -88,10 +88,10 @@ function getAnswers() {
         },
     }
     fetch(ANSWERS_VIEW + id, fetchData)
-        .then(function(res) {
+        .then(function (res) {
             if (res.status == 200) {
-                res.json().then(function(data) {
-                    if (data == null) {} else {
+                res.json().then(function (data) {
+                    if (data == null) { } else {
                         // console.log(data)
                         for (var i = 0; i < data.answers.length; i++) {
                             html = `<div class="bordered p-3 my-3">
@@ -118,89 +118,89 @@ function getAnswers() {
                             final_data = {
                                 "time": 1593442726879,
                                 "blocks": [{
-                                        "type": "header",
-                                        "data": {
-                                            "text": "Blog Title",
-                                            "level": 2
-                                        }
-                                    },
-                                    {
-                                        "type": "paragraph",
-                                        "data": {
-                                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "data": {
-                                            "file": {
-                                                "url": "/upload/redactor_images/o_f46949ac399275cd7db44f099e380aa8.jpg",
-                                                "width": 960,
-                                                "height": 640
-                                            },
-                                            "caption": "Test Picture",
-                                            "withBorder": false,
-                                            "stretched": false,
-                                            "withBackground": false
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "data": {
-                                            "file": {
-                                                "url": "/upload/temporary/o_ab055c85c7157c0339737603d42be47d.jpg",
-                                                "width": 735,
-                                                "height": 684
-                                            },
-                                            "caption": "Test Picture 2",
-                                            "withBorder": false,
-                                            "stretched": false,
-                                            "withBackground": false
-                                        }
-                                    },
-                                    {
-                                        "type": "list",
-                                        "data": {
-                                            "style": "ordered",
-                                            "items": [
-                                                "List",
-                                                "List 2"
+                                    "type": "header",
+                                    "data": {
+                                        "text": "Blog Title",
+                                        "level": 2
+                                    }
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "data": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    }
+                                },
+                                {
+                                    "type": "image",
+                                    "data": {
+                                        "file": {
+                                            "url": "/upload/redactor_images/o_f46949ac399275cd7db44f099e380aa8.jpg",
+                                            "width": 960,
+                                            "height": 640
+                                        },
+                                        "caption": "Test Picture",
+                                        "withBorder": false,
+                                        "stretched": false,
+                                        "withBackground": false
+                                    }
+                                },
+                                {
+                                    "type": "image",
+                                    "data": {
+                                        "file": {
+                                            "url": "/upload/temporary/o_ab055c85c7157c0339737603d42be47d.jpg",
+                                            "width": 735,
+                                            "height": 684
+                                        },
+                                        "caption": "Test Picture 2",
+                                        "withBorder": false,
+                                        "stretched": false,
+                                        "withBackground": false
+                                    }
+                                },
+                                {
+                                    "type": "list",
+                                    "data": {
+                                        "style": "ordered",
+                                        "items": [
+                                            "List",
+                                            "List 2"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "code",
+                                    "data": {
+                                        "code": "JavaScript"
+                                    }
+                                },
+                                {
+                                    "type": "quote",
+                                    "data": {
+                                        "text": "This is a quote",
+                                        "caption": "by Akshat Gupta",
+                                        "alignment": "left"
+                                    }
+                                },
+                                {
+                                    "type": "delimiter",
+                                    "data": {}
+                                },
+                                {
+                                    "type": "table",
+                                    "data": {
+                                        "content": [
+                                            [
+                                                "Table heading",
+                                                "Table heading"
+                                            ],
+                                            [
+                                                "Table data",
+                                                "Table data"
                                             ]
-                                        }
-                                    },
-                                    {
-                                        "type": "code",
-                                        "data": {
-                                            "code": "JavaScript"
-                                        }
-                                    },
-                                    {
-                                        "type": "quote",
-                                        "data": {
-                                            "text": "This is a quote",
-                                            "caption": "by Akshat Gupta",
-                                            "alignment": "left"
-                                        }
-                                    },
-                                    {
-                                        "type": "delimiter",
-                                        "data": {}
-                                    },
-                                    {
-                                        "type": "table",
-                                        "data": {
-                                            "content": [
-                                                [
-                                                    "Table heading",
-                                                    "Table heading"
-                                                ],
-                                                [
-                                                    "Table data",
-                                                    "Table data"
-                                                ]
-                                            ]
-                                        }
-                                    },
+                                        ]
+                                    }
+                                },
 
                                 ],
                                 "version": "2.18.0"
@@ -228,14 +228,14 @@ function procceed(final_data) {
         holder: 'editorjs',
         tools: tools,
         data: final_data,
-        onReady: function() {
+        onReady: function () {
             ShowToast("Ready to publish?")
         },
-        onChange: function() {
+        onChange: function () {
             // console.log('something changed');
         }
     });
-    saveButton.addEventListener('click', function() {
+    saveButton.addEventListener('click', function () {
         editor.save().then((savedData) => {
             // console.log("Saved")
             savedata(savedData)
