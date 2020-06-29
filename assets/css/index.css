@@ -452,3 +452,8 @@ main {
         min-width: 210px;
     }
 }
+
+/* ChartJS */
+#barChart {
+    max-width: 800px;
+}
